@@ -2,20 +2,36 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    line-height: 1.7;
     background-color: #ffffff;
-    color: #111111;
-    max-width: 900px;
+    color: #111;
+    max-width: 950px;
     margin-left: auto;
     margin-right: auto;
     padding: 40px 20px;
+    line-height: 1.7;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 60px;
+/* Header Layout */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
 }
 
+.header-text {
+    max-width: 65%;
+}
+
+.header-image img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+
+/* Typography */
 h1 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
@@ -23,34 +39,65 @@ h1 {
 }
 
 .subtitle {
+    color: #555;
     font-weight: 300;
-    color: #555555;
 }
 
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 15px;
     border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 5px;
-}
-
-h3 {
-    margin-bottom: 5px;
-}
-
-ul {
-    padding-left: 20px;
+    padding-bottom: 6px;
 }
 
 .project {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.project:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-3px);
+}
+
+/* Smooth Fade-In */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.2s; }
+section:nth-child(2) { animation-delay: 0.4s; }
+section:nth-child(3) { animation-delay: 0.6s; }
+section:nth-child(4) { animation-delay: 0.8s; }
+section:nth-child(5) { animation-delay: 1s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+a:hover {
+    border-color: #000;
 }
 
 footer {
     margin-top: 80px;
     text-align: center;
     font-size: 14px;
-    color: #777777;
+    color: #777;
 }
