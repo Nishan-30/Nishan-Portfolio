@@ -18,6 +18,7 @@
     <div class="header-image">
         <img src="profile.jpg" alt="Profile Photo">
     </div>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
 </header>
 
 <section>
@@ -102,6 +103,13 @@ with strategic leadership to create impactful mobility solutions.
 <footer>
     <p>© 2026 Mohammad Hanif Hasan Nishan</p>
 </footer>
+
+<script>
+const toggle = document.getElementById("darkModeToggle");
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+});
+</script>
 
 </body>
 </html>
