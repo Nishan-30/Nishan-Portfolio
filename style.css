@@ -225,8 +225,53 @@ body {
     border-bottom: 1px solid #333;
   }
 
+.section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.section .content {
+    width: 60%;
+}
+
+.section .sidebar {
+    width: 35%;
+}
+
+h1, h2, h3 {
+    font-family: 'Georgia', serif; 
+    color: #333;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif; 
+    line-height: 1.6;
+}  
+
   a {
     color: #e5e5e5;
   }
 
+}
+
+
+:root {
+    --primary-color: #005f73;
+    --secondary-color: #0a9396;
+    --accent-color: #94d2bd;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
