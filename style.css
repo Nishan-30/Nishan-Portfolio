@@ -11,6 +11,10 @@ body {
     line-height: 1.7;
 }
 
+h1,h2{
+font-family:'Playfair Display',serif;
+}
+
 /* Header Layout */
 .header-container {
     display: flex;
@@ -289,4 +293,16 @@ text-decoration:none;
 
 a:hover{
 text-decoration:underline;
+}
+
+.project{
+padding:18px;
+background:#f8f9fb;
+border-radius:8px;
+margin-bottom:20px;
+transition:transform .3s ease;
+}
+
+.project:hover{
+transform:translateY(-4px);
 }
