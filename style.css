@@ -275,3 +275,18 @@ a {
     text-decoration: none;
     border-radius: 5px;
 }
+
+section{
+margin-top:60px;
+padding-bottom:20px;
+border-bottom:1px solid #e6e6e6;
+}
+
+a{
+color:#2c5aa0;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
