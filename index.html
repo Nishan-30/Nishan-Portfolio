@@ -203,21 +203,21 @@
     <script>
         // Dark Mode with Persistence
         const toggle = document.getElementById("darkModeToggle");
-        const html = document.documentElement;
+        const body = document.body;
 
         // Check saved preference or system preference
         const savedTheme = localStorage.getItem("darkMode");
         const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
         if (savedTheme === "true" || (!savedTheme && systemDark)) {
-            html.classList.add("dark");
-            toggle.textContent = "☀️ Light Mode";
+            body.classList.add("dark");
+            toggle.textContent = "Light Mode";
         }
 
         toggle.addEventListener("click", () => {
-            const isDark = html.classList.toggle("dark");
+            const isDark = body.classList.toggle("dark");
             localStorage.setItem("darkMode", isDark);
-            toggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+            toggle.textContent = isDark ? "Light Mode" : "Dark Mode";
         });
 
         // Progress Bar

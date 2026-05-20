@@ -1,8 +1,9 @@
 :root {
-    /* Technical Palette – Precision Engineering Aesthetic */
+    /* Technical Palette – Soft Rounded Aesthetic */
     --primary: #0f172a;        /* Deep slate – foundation */
     --secondary: #1e293b;       /* Charcoal slate */
     --accent: #d97706;         /* Engineering amber – signal/highlight */
+    --accent-hover: #b45309;    /* Amber hover */
     --accent-muted: #b45309;   /* Muted amber */
     --accent-light: #fcd34d;   /* Soft gold */
     --bg: #f8fafc;             /* Cool off-white */
@@ -15,9 +16,9 @@
     --border-dark: #cbd5e1;
     --card-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
     --card-shadow-hover: 0 4px 20px rgba(15, 23, 42, 0.12), 0 8px 30px rgba(15, 23, 42, 0.08);
-    --radius: 2px;             /* Sharp, precise corners */
-    --radius-lg: 4px;
-    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 12px;            /* Soft, rounded corners */
+    --radius-lg: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Technical accent colors */
     --signal-green: #059669;
@@ -183,7 +184,7 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 8px 16px;
-    border-radius: 0;
+    border-radius: var(--radius);
     transition: var(--transition);
     white-space: nowrap;
     position: relative;
@@ -221,8 +222,9 @@ a:hover {
     padding: 40px;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 0;
+    border-radius: var(--radius-lg);
     position: relative;
+    box-shadow: var(--card-shadow);
 }
 
 /* Technical grid overlay */
@@ -275,27 +277,26 @@ a:hover {
 .header-image img {
     width: 140px;
     height: 140px;
-    border-radius: 0;
+    border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--text);
+    border: 3px solid var(--border);
     filter: grayscale(20%) contrast(1.05);
     transition: var(--transition);
 }
 
 .header-image img:hover {
-    transform: none;
+    transform: scale(1.05);
     border-color: var(--accent);
-    box-shadow: none;
     filter: grayscale(0%) contrast(1);
 }
 
 /* Dark Mode Toggle – Instrument-style */
 #darkModeToggle {
     padding: 8px 16px;
-    border: 1px solid var(--text);
-    background: transparent;
-    color: var(--text);
-    border-radius: 0;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-secondary);
+    border-radius: var(--radius);
     cursor: pointer;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
@@ -308,6 +309,8 @@ a:hover {
 #darkModeToggle:hover {
     background: var(--text);
     color: var(--bg);
+    border-color: var(--text);
+}
     border-color: var(--text);
 }
 
@@ -371,6 +374,7 @@ section:last-of-type {
     padding: 8px 12px;
     background: var(--bg-tertiary);
     border: 1px solid var(--border);
+    border-radius: var(--radius);
     color: var(--text-secondary);
     text-align: center;
     transition: var(--transition);
@@ -478,6 +482,7 @@ footer span::before {
     width: 100%;
     overflow: hidden;
     border: 1px solid var(--border);
+    border-radius: var(--radius);
     background: var(--bg-tertiary);
 }
 
@@ -553,6 +558,7 @@ footer span::before {
     padding: 20px;
     background: var(--bg-tertiary);
     border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
     animation: slideDown 0.3s ease-out;
 }
 
