@@ -686,3 +686,186 @@ button:focus {
         color: black;
     }
 }
+
+/* ============================================
+   PREMIUM ANIMATIONS - TRANSPORTATION THEME
+   Subtle, sophisticated animations for a polished professional feel
+   ============================================ */
+
+/* Header entrance animation - sleek slide up */
+.header-container {
+    animation: headerFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes headerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar slide down with delay */
+.navbar {
+    animation: navSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    opacity: 0;
+}
+
+@keyframes navSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section sequential fade in - premium staggered reveal */
+section {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: sectionFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-fill-mode: both;
+}
+
+section:nth-of-type(1) { animation-delay: 0.2s; }
+section:nth-of-type(2) { animation-delay: 0.28s; }
+section:nth-of-type(3) { animation-delay: 0.36s; }
+section:nth-of-type(4) { animation-delay: 0.44s; }
+section:nth-of-type(5) { animation-delay: 0.52s; }
+section:nth-of-type(6) { animation-delay: 0.6s; }
+section:nth-of-type(7) { animation-delay: 0.68s; }
+section:nth-of-type(8) { animation-delay: 0.76s; }
+section:nth-of-type(9) { animation-delay: 0.84s; }
+section:nth-of-type(10) { animation-delay: 0.92s; }
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project cards - premium hover with lift */
+.project, .card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project:hover, .card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--accent);
+}
+
+/* Skills grid fade in */
+.skills-grid {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skill tags - elegant hover */
+.skill-tag {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-tag:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    background: var(--bg-secondary);
+    transform: translateY(-3px);
+}
+
+/* Navbar links - underline slide effect */
+.navbar a {
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-50%);
+    border-radius: 1px;
+    opacity: 0;
+}
+
+.navbar a:hover::after {
+    width: 50%;
+    opacity: 1;
+}
+
+/* Links with arrow animation */
+.link-group a {
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-group a:hover {
+    padding-right: 24px;
+}
+
+/* Smooth progress bar */
+#progress-bar {
+    transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ambient background animations - traffic flow inspired */
+body::before {
+    animation: bgFlow 24s ease-in-out infinite;
+}
+
+@keyframes bgFlow {
+    0%, 100% {
+        transform: rotate(-25deg) translateY(0) scale(1);
+    }
+    50% {
+        transform: rotate(-25deg) translateY(30px) scale(1.02);
+    }
+}
+
+body::after {
+    animation: bgFlowReverse 28s ease-in-out infinite;
+}
+
+@keyframes bgFlowReverse {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(25px) scale(1.03);
+    }
+}
+
+/* Premium focus states */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
