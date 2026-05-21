@@ -13,6 +13,17 @@
 <body>
     <div id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Page scroll progress"></div>
 
+    <!-- Top Bar: Hamburger + Dark Mode Toggle -->
+    <div class="top-bar">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <button id="darkModeToggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
+    </div>
+
+    <!-- Navigation Menu (collapsible on mobile) -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#research">Research</a>
@@ -32,10 +43,6 @@
             <img src="profile.jpg" alt="Profile photo of Mohammad Hanif Hasan Nishan" loading="eager">
         </div>
     </header>
-
-    <div style="margin: -30px 0 40px; display: flex; justify-content: flex-end;">
-        <button id="darkModeToggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
-    </div>
 
     <main>
         <section id="about" aria-labelledby="about-heading">
@@ -82,7 +89,7 @@
                     <div class="carousel-wrapper">
                         <div class="carousel-container" id="carousel" role="region" aria-label="Project updates carousel">
                             <div class="carousel-item" tabindex="0" role="button" aria-label="View Update 1: Model Training" onclick="toggleUpdate(0)">
-                                <img src="Data Train ss.png" alt="VELOXIS model training in progress" loading="lazy">
+                                <img src="https://via.placeholder.com/800x400?text=Model+Training" alt="VELOXIS model training in progress" loading="lazy">
                                 <div class="item-caption">Model Training</div>
                             </div>
                             <div class="carousel-item" tabindex="0" role="button" aria-label="View Update 2: Data Collection" onclick="toggleUpdate(1)">
@@ -96,6 +103,13 @@
                         </div>
                         <button class="carousel-btn prev" onclick="moveCarousel(-1)" aria-label="Previous slide">❮</button>
                         <button class="carousel-btn next" onclick="moveCarousel(1)" aria-label="Next slide">❯</button>
+                    </div>
+
+                    <!-- Carousel Dots -->
+                    <div class="carousel-dots" role="tablist" aria-label="Carousel slides">
+                        <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1" onclick="goToSlide(0)"></button>
+                        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" onclick="goToSlide(1)"></button>
+                        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 3" onclick="goToSlide(2)"></button>
                     </div>
 
                     <div class="update-details-container">
@@ -187,7 +201,7 @@
             <h2 id="contact-heading">Get in Touch</h2>
             <div class="link-group">
                 <a href="CV.pdf" target="_blank" rel="noopener noreferrer">Download CV ↗</a>
-                <a href="mailto:mohammadhanifhasannishan@gmail.com">Email ↗</a>
+                <a href="mailto:mohammadhanifhasannishan@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a>
                 <a href="https://www.linkedin.com/in/md-hanif-hasan-nishan" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
                 <a href="https://github.com/Nishan-30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                 <a href="https://www.facebook.com/Mohammadhanifhasan.nishan/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
@@ -196,11 +210,14 @@
     </main>
 
     <footer>
-        <span>2026 Mohammad Hanif Hasan Nishan</span>
+        <span>&copy; <span id="year"></span> Mohammad Hanif Hasan Nishan</span>
         <span>Built with precision</span>
     </footer>
 
     <script>
+        // Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         // Dark Mode with Persistence
         const toggle = document.getElementById("darkModeToggle");
         const body = document.body;
@@ -232,18 +249,56 @@
 
         // Carousel Logic
         let currentSlide = 0;
+        let autoAdvanceInterval;
         const totalSlides = document.querySelectorAll('.carousel-item').length;
+        const carousel = document.getElementById('carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
 
-        function moveCarousel(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        function updateCarousel() {
             const offset = -currentSlide * 100;
-            document.getElementById('carousel').style.transform = `translateX(${offset}%)`;
+            carousel.style.transform = `translateX(${offset}%)`;
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+                dot.setAttribute('aria-selected', index === currentSlide);
+            });
 
             // Close all details when moving
             document.querySelectorAll('.update-detail').forEach(detail => {
                 detail.classList.remove('active');
             });
         }
+
+        function moveCarousel(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateCarousel();
+            resetAutoAdvance();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+            resetAutoAdvance();
+        }
+
+        function startAutoAdvance() {
+            autoAdvanceInterval = setInterval(() => {
+                moveCarousel(1);
+            }, 5000); // 5 seconds
+        }
+
+        function resetAutoAdvance() {
+            clearInterval(autoAdvanceInterval);
+            startAutoAdvance();
+        }
+
+        // Start auto-advance on page load
+        startAutoAdvance();
+
+        // Pause auto-advance on user interaction
+        carousel.addEventListener('mouseenter', () => clearInterval(autoAdvanceInterval));
+        carousel.addEventListener('mouseleave', startAutoAdvance);
 
         // Dropdown Logic
         function toggleUpdate(index) {
@@ -268,6 +323,35 @@
                     toggleUpdate(index);
                 }
             });
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navbar.classList.toggle('open');
+            const isOpen = navbar.classList.contains('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close menu when clicking a link
+        navbar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navbar.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navbar.classList.contains('open')) {
+                hamburger.classList.remove('active');
+                navbar.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
         });
     </script>
 </body>

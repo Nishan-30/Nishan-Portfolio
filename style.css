@@ -172,6 +172,53 @@ a:hover {
     z-index: 2000;
 }
 
+/* Top Bar: Hamburger + Dark Mode Toggle */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -20px 24px;
+    padding: 0 20px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    padding: 8px;
+    transition: var(--transition);
+}
+
+.hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 1px;
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* Navigation */
 .navbar {
     position: sticky;
@@ -539,6 +586,41 @@ footer span::before {
 .prev { left: 12px; }
 .next { right: 12px; }
 
+/* Carousel Dots Indicator */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-dark);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: var(--text-muted);
+}
+
+.carousel-dot.active {
+    background: var(--accent);
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* Auto-advancing carousel */
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .update-details-container {
     margin-top: 16px;
 }
@@ -629,17 +711,33 @@ footer span::before {
         width: 2px;
     }
 
+    /* Moblie nav: show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
     .navbar {
-        padding: 12px 8px;
-        gap: 6px;
-        justify-content: flex-start;
-        overflow-x: auto;
-        border-radius: var(--radius);
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        padding: 16px;
+        gap: 4px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 0 0 var(--radius) var(--radius);
+        margin: 0 -20px;
+    }
+
+    .navbar.open {
+        display: flex;
     }
 
     .navbar a {
-        font-size: 0.65rem;
-        padding: 6px 10px;
+        font-size: 0.75rem;
+        padding: 12px 16px;
     }
 
     .carousel-item img {
