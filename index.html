@@ -110,6 +110,18 @@
                         <button class="dot" data-index="1"></button>
                         <button class="dot" data-index="2"></button>
                     </div>
+                    <!-- Slide Description -->
+                    <div class="slide-description" id="slideDesc">
+                        <div class="desc-item active" data-desc="0">
+                            <p><strong>Model Training</strong> — Trained YOLOv11 on 5,000+ locally sourced images. Achieved high accuracy detecting rickshaws, CNGs, and buses in Dhaka traffic.</p>
+                        </div>
+                        <div class="desc-item" data-desc="1">
+                            <p><strong>Data Collection</strong> — Collected video data at 10 major intersections. Used to calibrate saturation flow models for local conditions.</p>
+                        </div>
+                        <div class="desc-item" data-desc="2">
+                            <p><strong>Field Testing</strong> — 92% correlation with manual counting. Mobile optimization in progress.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -154,6 +166,25 @@
                 <p>
                     Ran an issue-focused campaign addressing campus health, sustainability, and environmental awareness.
                 </p>
+                <!-- Photo Gallery -->
+                <div class="photo-gallery">
+                    <button class="gallery-btn prev-gallery" id="prevGallery">❮</button>
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523240795612-9a054b127543?w=400&h=300&fit=crop" alt="Campaign Photo 1"></div>
+                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&h=300&fit=crop" alt="Campaign Photo 2"></div>
+                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="Campaign Photo 3"></div>
+                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517486808906-6ca8b7f04846?w=400&h=300&fit=crop" alt="Campaign Photo 4"></div>
+                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523580494863-6f3030424c87?w=400&h=300&fit=crop" alt="Campaign Photo 5"></div>
+                    </div>
+                    <button class="gallery-btn next-gallery" id="nextGallery">❯</button>
+                    <div class="gallery-dots" id="galleryDots">
+                        <button class="dot active" data-index="0"></button>
+                        <button class="dot" data-index="1"></button>
+                        <button class="dot" data-index="2"></button>
+                        <button class="dot" data-index="3"></button>
+                        <button class="dot" data-index="4"></button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -265,6 +296,7 @@
         const dots = document.querySelectorAll('.dot');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const descItems = document.querySelectorAll('.desc-item');
 
         let currentIndex = 0;
         let autoplayInterval;
@@ -277,6 +309,11 @@
             // Update dots
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
+            });
+
+            // Update description
+            descItems.forEach((desc, index) => {
+                desc.classList.toggle('active', index === currentIndex);
             });
         }
 
@@ -334,6 +371,56 @@
 
         // Start autoplay
         startAutoplay();
+
+        /* ============================================
+           PHOTO GALLERY (Student Council)
+           ============================================ */
+        const galleryTrack = document.getElementById('galleryTrack');
+        const galleryItems = galleryTrack.querySelectorAll('.gallery-item');
+        const galleryDots = document.querySelectorAll('#galleryDots .dot');
+        const prevGalleryBtn = document.getElementById('prevGallery');
+        const nextGalleryBtn = document.getElementById('nextGallery');
+
+        let galleryIndex = 0;
+        let galleryAutoplay;
+
+        function updateGallery() {
+            galleryTrack.style.transform = 'translateX(-' + (galleryIndex * 100) + '%)';
+            galleryDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === galleryIndex);
+            });
+        }
+
+        function nextGallerySlide() {
+            galleryIndex = (galleryIndex + 1) % galleryItems.length;
+            updateGallery();
+        }
+
+        function prevGallerySlide() {
+            galleryIndex = (galleryIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateGallery();
+        }
+
+        function startGalleryAutoplay() {
+            galleryAutoplay = setInterval(nextGallerySlide, 4000);
+        }
+
+        function resetGalleryAutoplay() {
+            clearInterval(galleryAutoplay);
+            startGalleryAutoplay();
+        }
+
+        prevGalleryBtn.addEventListener('click', () => { prevGallerySlide(); resetGalleryAutoplay(); });
+        nextGalleryBtn.addEventListener('click', () => { nextGallerySlide(); resetGalleryAutoplay(); });
+
+        galleryDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => { galleryIndex = i; updateGallery(); resetGalleryAutoplay(); });
+        });
+
+        galleryTrack.addEventListener('mouseenter', () => clearInterval(galleryAutoplay));
+        galleryTrack.addEventListener('mouseleave', startGalleryAutoplay);
+
+        startGalleryAutoplay();
     </script>
 </body>
 </html>
