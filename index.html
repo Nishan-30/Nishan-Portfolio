@@ -3,614 +3,322 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Hanif Hasan Nishan — Transportation Engineering</title>
-    <meta name="description" content="Transportation Engineering student specializing in traffic systems, mobility analysis, and sustainable infrastructure planning.">
+    <title>Hanif Hasan Nishan — Transportation Engineering</title>
+    <meta name="description" content="Transportation Engineering student specializing in traffic systems and sustainable mobility">
 
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Page scroll progress"></div>
+    <!-- Animated Background -->
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-lines"></div>
+    </div>
 
-    <!-- Top Bar: Hamburger + Dark Mode Toggle -->
-    <div class="top-bar">
-        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <!-- Progress -->
+    <div class="scroll-progress" id="progress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-glass">
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <button id="darkModeToggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
-    </div>
 
-    <!-- Navigation Menu (collapsible on mobile) -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#impact">Sustainability</a>
-        <a href="#travel">Exploration</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#research">Research</a>
+            <a href="#leadership">Leadership</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+            <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </button>
     </nav>
 
-    <header class="header-container">
-        <div class="header-text">
-            <h1>Mohammad Hanif Hasan Nishan</h1>
-            <p class="subtitle">Transportation Engineering · Traffic Systems · Sustainable Mobility</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-left">
+            <span class="eyebrow">Transportation Engineering</span>
+            <h1>Hanif Hasan<br><span class="accent">Nishan</span></h1>
+            <p class="tagline">Building intelligent mobility systems for developing cities</p>
+
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
         </div>
-        <div class="header-image">
-            <img src="profile.jpg" alt="Profile photo of Mohammad Hanif Hasan Nishan" loading="eager">
+
+        <div class="hero-right">
+            <div class="profile-wrapper">
+                <div class="profile-glow"></div>
+                <img src="profile.jpg" alt="Hanif Hasan Nishan">
+                <div class="tech-badges">
+                    <span>YOLOv11</span>
+                    <span>SUMO</span>
+                    <span>AI Vision</span>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
     <main>
-        <section id="about" aria-labelledby="about-heading">
-            <h2 id="about-heading">About</h2>
-            <p>
-                Civil and Environmental Engineering student specializing in transportation systems and sustainable infrastructure planning. My work integrates analytical engineering methods with leadership and project coordination experience. I am particularly interested in how data-driven mobility solutions and strategic planning can shape resilient urban systems in developing and global contexts.
-            </p>
+        <!-- About -->
+        <section id="about" class="reveal">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="content-block">
+                <p class="lead">Civil and Environmental Engineering student passionate about sustainable transportation and data-driven mobility solutions.</p>
+                <p>I specialize in integrating AI computer vision (YOLOv11) with microscopic traffic simulation (SUMO) to analyze and optimize mixed-traffic conditions unique to South Asian cities. Beyond technical work, I've led student organizations coordinating 250+ members and believe effective engineering requires stakeholder engagement and systems thinking.</p>
+            </div>
         </section>
 
-        <section aria-labelledby="focus-heading">
-            <h2 id="focus-heading">Current Focus</h2>
-            <p>
-                Currently developing real-time traffic monitoring systems using YOLOv11 and exploring integration with SUMO microscopic simulation for mixed-traffic conditions in South Asian cities.
-            </p>
-        </section>
-
-        <section aria-labelledby="skills-heading">
-            <h2 id="skills-heading">Skills</h2>
-            <div class="skills-grid">
+        <!-- Skills -->
+        <section id="skills" class="reveal">
+            <div class="section-title">
+                <h2>Skills</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="skills-flex">
                 <span class="skill-tag">Python</span>
+                <span class="skill-tag">YOLOv11</span>
+                <span class="skill-tag">SUMO</span>
                 <span class="skill-tag">AutoCAD</span>
                 <span class="skill-tag">QGIS</span>
-                <span class="skill-tag">ETABS</span>
                 <span class="skill-tag">Data Analysis</span>
-                <span class="skill-tag">Research Writing</span>
-                <span class="skill-tag">Project Coordination</span>
+                <span class="skill-tag">Research</span>
             </div>
         </section>
 
-        <section id="projects" aria-labelledby="projects-heading">
-            <h2 id="projects-heading">Selected Projects</h2>
+        <!-- Projects -->
+        <section id="projects" class="reveal">
+            <div class="section-title">
+                <h2>Featured Work</h2>
+                <div class="title-line"></div>
+            </div>
 
-            <div class="project">
-                <h3>VELOXIS</h3>
-                <p>
-                    AI-powered traffic analysis platform built for mixed-traffic conditions in Bangladesh. Combines a custom-trained YOLOv11 model with advanced traffic engineering metrics including vehicle counting, PHF, saturation flow, LOS, V85, queue length, and turning movement counts. Designed for researchers and engineers seeking accurate, low-cost, locally-adapted traffic data.
-                </p>
-                <div class="link-group">
-                    <a href="https://github.com/Nishan-30/Veloxis" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+            <article class="feature-project">
+                <div class="project-header">
+                    <span class="badge">Primary Project</span>
+                    <h3>VELOXIS</h3>
                 </div>
+                <p>AI-powered traffic analysis platform for Bangladesh's mixed-traffic conditions. Combines custom YOLOv11 model with traffic engineering metrics: vehicle counting, PHF, saturation flow, LOS, V85, queue length.</p>
 
-                <div class="veloxis-updates">
-            <h4>Project Updates</h4>
-            <div class="carousel-wrapper" id="carouselWrapper">
-                <div class="carousel-container" id="carousel" role="region" aria-label="Project updates carousel">
-                    <div class="carousel-slide" data-slide="0">
-                        <div class="slide-image-container">
-                            <img src="https://via.placeholder.com/800x400?text=Model+Training" alt="VELOXIS model training in progress" loading="lazy">
+                <!-- WORKING SLIDER -->
+                <div class="slider-container">
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="slide-item">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop" alt="Model Training">
+                            <div class="slide-label"><span>01</span>Model Training</div>
                         </div>
-                        <div class="item-caption">Model Training</div>
-                        <button class="like-btn" aria-label="Like this update" onclick="toggleLike(this)">
-                            <span class="heart">❤️</span>
-                            <span class="like-count">0</span>
-                        </button>
+                        <div class="slide-item">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop" alt="Data Collection">
+                            <div class="slide-label"><span>02</span>Data Collection</div>
+                        </div>
+                        <div class="slide-item">
+                            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ea245?w=800&h=500&fit=crop" alt="Field Testing">
+                            <div class="slide-label"><span>03</span>Field Testing</div>
+                        </div>
                     </div>
-                    <div class="carousel-slide" data-slide="1">
-                        <div class="slide-image-container">
-                            <img src="https://via.placeholder.com/800x400?text=Data+Collection" alt="Data collection at intersection" loading="lazy">
-                        </div>
-                        <div class="item-caption">Data Collection</div>
-                        <button class="like-btn" aria-label="Like this update" onclick="toggleLike(this)">
-                            <span class="heart">❤️</span>
-                            <span class="like-count">0</span>
+
+                    <div class="slider-nav">
+                        <button class="nav-arrow" id="prevSlide" aria-label="Previous">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
                         </button>
-                    </div>
-                    <div class="carousel-slide" data-slide="2">
-                        <div class="slide-image-container">
-                            <img src="https://via.placeholder.com/800x400?text=Field+Testing" alt="Field testing results" loading="lazy">
-                        </div>
-                        <div class="item-caption">Field Testing</div>
-                        <button class="like-btn" aria-label="Like this update" onclick="toggleLike(this)">
-                            <span class="heart">❤️</span>
-                            <span class="like-count">0</span>
+                        <div class="slider-dots" id="sliderDots"></div>
+                        <button class="nav-arrow" id="nextSlide" aria-label="Next">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
                         </button>
                     </div>
                 </div>
 
-                <!-- Floating Navigation Arrows -->
-                <button class="carousel-nav carousel-btn prev" onclick="moveCarousel(-1)" aria-label="Previous slide">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="15,18 9,12 15,6"></polyline>
-                    </svg>
-                </button>
-                <button class="carousel-nav carousel-btn next" onclick="moveCarousel(1)" aria-label="Next slide">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="9,18 15,12 9,6"></polyline>
-                    </svg>
-                </button>
-
-                <!-- Progress Bar -->
-                <div class="carousel-progress">
-                    <div class="carousel-progress-fill" id="progressFill"></div>
+                <div class="project-link">
+                    <a href="https://github.com/Nishan-30/Veloxis" target="_blank" class="link-flex">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.983-.4 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.807 5.625-5.475 5.92.42.36.765 1.09.765 2.188v3.25c0 .315.19.691.796.575 4.765-1.587 8.2-6.084 8.2-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View on GitHub
+                    </a>
                 </div>
+            </article>
+        </section>
 
-                <!-- Swipe Indicator -->
-                <div class="swipe-indicator">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                    </svg>
-                    <span>Swipe to navigate</span>
-                </div>
+        <!-- Research -->
+        <section id="research" class="reveal">
+            <div class="section-title">
+                <h2>Research</h2>
+                <div class="title-line"></div>
             </div>
+            <article class="paper-block">
+                <div class="paper-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <h4>Energy Supply Disruption & Cascading Economic Effects</h4>
+                <p>Working paper on March 2026 fuel crisis impacts in Bangladesh — fuel price transmission and supply chain effects.</p>
+                <a href="FuelCrisis_WorkingPaper.pdf" class="read-link">Read Paper →</a>
+            </article>
+        </section>
 
-            <!-- Enhanced Dots with Labels -->
-            <div class="carousel-dots" role="tablist" aria-label="Carousel slides">
-                <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1" onclick="goToSlide(0)">
-                    <span class="dot-label">Model</span>
-                </button>
-                <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" onclick="goToSlide(1)">
-                    <span class="dot-label">Data</span>
-                </button>
-                <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 3" onclick="goToSlide(2)">
-                    <span class="dot-label">Testing</span>
-                </button>
+        <!-- Leadership -->
+        <section id="leadership" class="reveal">
+            <div class="section-title">
+                <h2>Leadership</h2>
+                <div class="title-line"></div>
             </div>
-
-            <!-- Gallery Stats -->
-            <div class="gallery-stats">
-                <div class="stat-item">
-                    <span class="stat-value" id="slidesViewed">1</span>
-                    <span class="stat-label">/ <span id="totalSlides">3</span> viewed</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value" id="totalLikes">0</span>
-                    <span class="stat-label">likes</span>
-                </div>
-                <button class="explore-all-btn" onclick="exploreAllSlides()" id="exploreBtn">
-                    <span>Explore All</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12,6 12,12 16,14"></polyline>
-                    </svg>
-                </button>
-            </div>
-
-            <div class="update-details-container">
-                <div class="update-detail" id="detail-0" role="region" aria-label="Update 1 details">
-                    <h5>Model Training Update</h5>
-                    <p>Successfully trained the YOLOv11 model on 5,000+ locally sourced images of mixed traffic in Dhaka. Achieved high accuracy in detecting rickshaws, CNGs, and buses.</p>
-                </div>
-                <div class="update-detail" id="detail-1" role="region" aria-label="Update 2 details">
-                    <h5>Data Collection Phase</h5>
-                    <p>Completed extensive video data collection at 10 major intersections. This data is being used to calibrate the saturation flow models for local conditions.</p>
-                </div>
-                <div class="update-detail" id="detail-2" role="region" aria-label="Update 3 details">
-                    <h5>Field Testing Results</h5>
-                    <p>Initial field tests show a 92% correlation with manual counting methods. Working on optimizing the real-time processing speed for mobile devices.</p>
-                </div>
-            </div>
-
-            <!-- Celebration Overlay -->
-            <div class="celebration-overlay" id="celebration">
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="confetti"></div>
-                <div class="celebration-text">
-                    <span class="emoji">🎉</span>
-                    <span>You've explored all updates!</span>
-                </div>
-            </div>
-        </div>
-            </div>
-
-            <div class="project">
-                <h3>Pathguard</h3>
-                <p>
-                    Conceptual redesign proposal aimed at improving traffic efficiency and pedestrian safety through geometric and operational modifications.
-                </p>
+            <div class="roles-grid">
+                <article class="role-item">
+                    <span class="org">ACEE, SUST</span>
+                    <h4>General Secretary</h4>
+                    <p>Coordinated 24-member committee, ~250 students</p>
+                </article>
+                <article class="role-item">
+                    <span class="org">Chattogram Forum</span>
+                    <h4>President</h4>
+                    <p>Led 45+ members, ~500 students</p>
+                </article>
             </div>
         </section>
 
-        <section id="research" aria-labelledby="research-heading">
-            <h2 id="research-heading">Research & Writing</h2>
-            <div class="project">
-                <h3>Energy Supply Disruption and Cascading Economic Effects</h3>
-                <p>
-                    Independent working paper examining the economic and transport impacts of the March 2026 fuel crisis in Bangladesh. The study discusses fuel price transmission, transport fare asymmetry, and cascading supply chain effects in an import-dependent economy.
-                </p>
-                <a href="FuelCrisis_WorkingPaper.pdf" target="_blank" rel="noopener noreferrer">Read Working Paper ↗</a>
+        <!-- Contact -->
+        <section id="contact" class="reveal">
+            <div class="section-title">
+                <h2>Connect</h2>
+                <div class="title-line"></div>
             </div>
-        </section>
-
-        <section id="leadership" aria-labelledby="leadership-heading">
-            <h2 id="leadership-heading">Leadership & Governance</h2>
-
-            <div class="project">
-                <h3>General Secretary — ACEE, SUST</h3>
-                <p>
-                    Coordinated a 24-member executive committee representing ~250 Civil and Environmental Engineering students. Supported academic programs, seminars, and departmental student engagement while facilitating communication between students and faculty.
-                </p>
-            </div>
-
-            <div class="project">
-                <h3>President — Chattogram Forum, SUST</h3>
-                <p>
-                    Led a 45+ member executive committee representing nearly 500 students from the Chattogram region. Organized networking events, cultural programs, and student engagement initiatives.
-                </p>
-            </div>
-
-            <div class="project">
-                <h3>Candidate — Health & Environment Secretary, Student Council</h3>
-                <p>
-                    Ran an issue-focused campaign addressing campus health, sustainability, and environmental awareness.
-                </p>
-            </div>
-        </section>
-
-        <section id="impact" aria-labelledby="impact-heading">
-            <h2 id="impact-heading">Sustainability & Social Impact</h2>
-            <div class="project">
-                <h3>Environmental Programs — Green Explore Society (GES), SUST</h3>
-                <p>
-                    Participated in environmental awareness campaigns including Clean SUST Movement, Zero Waste Campus, and school awareness campaigns. Activities conducted in collaboration with UNICEF, FIVDB, and the British Council.
-                </p>
-            </div>
-        </section>
-
-        <section aria-labelledby="philosophy-heading">
-            <h2 id="philosophy-heading">Leadership Philosophy</h2>
-            <p>
-                Effective engineering extends beyond technical design. Sustainable infrastructure requires coordination, stakeholder engagement, and systems-level thinking. My goal is to bridge engineering analysis with strategic leadership to create impactful mobility solutions.
-            </p>
-        </section>
-
-        <section id="travel" aria-labelledby="travel-heading">
-            <h2 id="travel-heading">Travel & Exploration</h2>
-            <p>
-                I frequently travel across different regions and document cultural landscapes, natural environments, and local experiences through digital content creation. These explorations help me observe how infrastructure, mobility, and environmental conditions shape everyday life.
-            </p>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-heading">
-            <h2 id="contact-heading">Get in Touch</h2>
-            <div class="link-group">
-                <a href="CV.pdf" target="_blank" rel="noopener noreferrer">Download CV ↗</a>
-                <a href="mailto:mohammadhanifhasannishan@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a>
-                <a href="https://www.linkedin.com/in/md-hanif-hasan-nishan" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                <a href="https://github.com/Nishan-30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                <a href="https://www.facebook.com/Mohammadhanifhasan.nishan/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+            <div class="contact-grid">
+                <a href="CV.pdf" class="contact-item" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download CV</span>
+                </a>
+                <a href="mailto:mohannishan@gmail.com" class="contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span>Email</span>
+                </a>
+                <a href="https://linkedin.com/in/md-hanif-hasan-nishan" class="contact-item" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.214.792 24 1.771 24h20.451C23.2 24 24 23.214 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/Nishan-30" class="contact-item" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.983-.4 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.807 5.625-5.475 5.92.42.36.765 1.09.765 2.188v3.25c0 .315.19.691.796.575 4.765-1.587 8.2-6.084 8.2-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
             </div>
         </section>
     </main>
 
     <footer>
-        <span>&copy; <span id="year"></span> Mohammad Hanif Hasan Nishan</span>
-        <span>Built with precision</span>
+        <p>&copy; <span id="year"></span> Hanif Hasan Nishan</p>
     </footer>
 
     <script>
-        // Dynamic Year
+        // YEAR
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Dark Mode with Persistence
-        const toggle = document.getElementById("darkModeToggle");
-        const body = document.body;
+        // THEME TOGGLE
+        const themeBtn = document.getElementById('themeBtn');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        });
+        if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
 
-        // Check saved preference or system preference
-        const savedTheme = localStorage.getItem("darkMode");
-        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        // MOBILE MENU
+        document.getElementById('menuBtn').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
 
-        if (savedTheme === "true" || (!savedTheme && systemDark)) {
-            body.classList.add("dark");
-            toggle.textContent = "Light Mode";
+        // SCROLL PROGRESS
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('progress').style.width = scrolled + '%';
+        });
+
+        /* =============================================
+           CAROUSEL SLIDER (WORKING)
+           ============================================= */
+        const track = document.getElementById('sliderTrack');
+        const slides = track.querySelectorAll('.slide-item');
+        const dotsContainer = document.getElementById('sliderDots');
+        let current = 0;
+        let autoPlay;
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goTo(i);
+            dotsContainer.appendChild(dot);
+        });
+        const dots = dotsContainer.querySelectorAll('.dot');
+
+        function update() {
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
         }
 
-        toggle.addEventListener("click", () => {
-            const isDark = body.classList.toggle("dark");
-            localStorage.setItem("darkMode", isDark);
-            toggle.textContent = isDark ? "Light Mode" : "Dark Mode";
+        function goTo(index) {
+            current = index;
+            update();
+            clearTimeout(autoPlay);
+            autoPlay = setTimeout(() => next(), 5000);
+        }
+
+        function next() {
+            current = (current + 1) % slides.length;
+            update();
+            autoPlay = setTimeout(() => next(), 5000);
+        }
+
+        function prev() {
+            current = (current - 1 + slides.length) % slides.length;
+            update();
+            clearTimeout(autoPlay);
+            autoPlay = setTimeout(() => next(), 5000);
+        }
+
+        // Controls
+        document.getElementById('nextSlide').onclick = () => { next(); clearTimeout(autoPlay); autoPlay = setTimeout(() => next(), 5000); };
+        document.getElementById('prevSlide').onclick = () => { prev(); clearTimeout(autoPlay); autoPlay = setTimeout(() => next(), 5000); };
+
+        // Keyboard
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight') { next(); clearTimeout(autoPlay); autoPlay = setTimeout(() => next(), 5000); }
+            if (e.key === 'ArrowLeft') { prev(); clearTimeout(autoPlay); autoPlay = setTimeout(() => next(), 5000); }
         });
 
-        // Progress Bar
-        window.addEventListener("scroll", () => {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            const progressBar = document.getElementById("progress-bar");
-            progressBar.style.width = scrolled + "%";
-            progressBar.setAttribute("aria-valuenow", Math.round(scrolled));
+        // Touch swipe
+        let touchStart = 0;
+        track.addEventListener('touchstart', e => touchStart = e.changedTouches[0].screenX);
+        track.addEventListener('touchend', e => {
+            const diff = e.changedTouches[0].screenX - touchStart;
+            if (diff > 50) prev();
+            if (diff < -50) next();
+            clearTimeout(autoPlay);
+            autoPlay = setTimeout(() => next(), 5000);
         });
 
-        /* ============================================
-           ENHANCED CAROUSEL LOGIC
-           ============================================ */
+        // Start
+        autoPlay = setTimeout(() => next(), 5000);
+        update();
 
-        let currentSlide = 0;
-        let autoAdvanceInterval;
-        let isDragging = false;
-        let startPos = 0;
-        let currentTranslate = 0;
-        let prevTranslate = 0;
-        let animationID;
-        let currentLikes = [0, 0, 0];
-        let viewedSlides = new Set([0]);
-        let allExplored = false;
-
-        const totalSlides = document.querySelectorAll('.carousel-slide').length;
-        const carousel = document.getElementById('carousel');
-        const wrapper = document.getElementById('carouselWrapper');
-        const dots = document.querySelectorAll('.carousel-dot');
-
-        // Initialize gallery stats
-        document.getElementById('totalSlides').textContent = totalSlides;
-        updateGalleryStats();
-
-        function updateCarousel() {
-            const offset = -currentSlide * 100;
-            carousel.style.transform = `translateX(${offset}%)`;
-
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-                dot.setAttribute('aria-selected', index === currentSlide);
+        // REVEAL ANIMATIONS
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-
-            // Update progress bar
-            const progress = ((currentSlide + 1) / totalSlides) * 100;
-            document.getElementById('progressFill').style.width = `${progress}%`;
-
-            // Track viewed slides
-            if (!viewedSlides.has(currentSlide)) {
-                viewedSlides.add(currentSlide);
-                updateGalleryStats();
-            }
-
-            // Close all details when moving
-            document.querySelectorAll('.update-detail').forEach(detail => {
-                detail.classList.remove('active');
-            });
-
-            // Show detail for current slide
-            const targetDetail = document.getElementById(`detail-${currentSlide}`);
-            if (targetDetail) {
-                targetDetail.classList.add('active');
-            }
-
-            // Check for completion
-            checkAllExplored();
-        }
-
-        function moveCarousel(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            updateCarousel();
-            resetAutoAdvance();
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
-            resetAutoAdvance();
-        }
-
-        function startAutoAdvance() {
-            autoAdvanceInterval = setInterval(() => {
-                moveCarousel(1);
-            }, 5000);
-        }
-
-        function resetAutoAdvance() {
-            clearInterval(autoAdvanceInterval);
-            startAutoAdvance();
-        }
-
-        // Start auto-advance on page load
-        startAutoAdvance();
-
-        // Pause auto-advance on user interaction
-        wrapper.addEventListener('mouseenter', () => clearInterval(autoAdvanceInterval));
-        wrapper.addEventListener('mouseleave', startAutoAdvance);
-
-        /* ============================================
-           DRAG / SWIPE GESTURES
-           ============================================ */
-
-        // Touch events
-        wrapper.addEventListener('touchstart', touchStart, { passive: true });
-        wrapper.addEventListener('touchend', touchEnd, { passive: true });
-        wrapper.addEventListener('touchmove', touchMove, { passive: false });
-
-        // Mouse events (desktop drag)
-        wrapper.addEventListener('mousedown', mouseDown);
-        window.addEventListener('mouseup', mouseUp);
-        wrapper.addEventListener('mousemove', mouseMove);
-
-        function touchStart(index) {
-            return function(event) {
-                startPos = getPositionX(event);
-                isDragging = true;
-                cancelAnimationFrame(animationID);
-            }
-        }
-        wrapper.addEventListener('touchstart', touchStart(0));
-
-        function touchMove(event) {
-            if (isDragging) {
-                const currentPosition = getPositionX(event);
-                const diff = currentPosition - startPos;
-                const threshold = 50;
-
-                if (Math.abs(diff) > threshold) {
-                    if (diff > 0) {
-                        moveCarousel(-1);
-                    } else {
-                        moveCarousel(1);
-                    }
-                    isDragging = false;
-                }
-            }
-        }
-
-        function touchEnd() {
-            isDragging = false;
-        }
-
-        function mouseDown(event) {
-            startPos = event.clientX;
-            isDragging = true;
-            wrapper.style.cursor = 'grabbing';
-        }
-
-        function mouseMove(event) {
-            if (!isDragging) return;
-
-            const currentPosition = event.clientX;
-            const diff = currentPosition - startPos;
-            const threshold = 50;
-
-            if (Math.abs(diff) > threshold) {
-                if (diff > 0) {
-                    moveCarousel(-1);
-                } else {
-                    moveCarousel(1);
-                }
-                isDragging = false;
-                wrapper.style.cursor = 'grab';
-            }
-        }
-
-        function mouseUp() {
-            isDragging = false;
-            wrapper.style.cursor = 'grab';
-        }
-
-        function getPositionX(event) {
-            return event.type.includes('touch') ? event.touches[0].clientX : event.clientX;
-        }
-
-        /* ============================================
-           LIKE BUTTONS
-           ============================================ */
-
-        function toggleLike(btn) {
-            const countEl = btn.querySelector('.like-count');
-            const heart = btn.querySelector('.heart');
-            const slideIndex = currentSlide;
-            const isLiked = btn.classList.contains('liked');
-
-            if (isLiked) {
-                currentLikes[slideIndex]--;
-                btn.classList.remove('liked');
-                heart.textContent = '🤍';
-            } else {
-                currentLikes[slideIndex]++;
-                btn.classList.add('liked');
-                heart.textContent = '❤️';
-
-                // Heart pop animation
-                heart.style.animation = 'heartPop 0.4s ease-out';
-                setTimeout(() => heart.style.animation = '', 400);
-            }
-
-            countEl.textContent = currentLikes[slideIndex];
-            updateGalleryStats();
-        }
-
-        /* ============================================
-           GALLERY STATS & TRACKING
-           ============================================ */
-
-        function updateGalleryStats() {
-            document.getElementById('slidesViewed').textContent = viewedSlides.size;
-            document.getElementById('totalLikes').textContent = currentLikes.reduce((a, b) => a + b, 0);
-
-            const exploreBtn = document.getElementById('exploreBtn');
-            if (viewedSlides.size === totalSlides) {
-                exploreBtn.classList.add('completed');
-                exploreBtn.querySelector('span').textContent = 'All Explored!';
-            }
-        }
-
-        function checkAllExplored() {
-            if (viewedSlides.size === totalSlides && !allExplored) {
-                allExplored = true;
-                showCelebration();
-            }
-        }
-
-        function exploreAllSlides() {
-            moveCarousel(1);
-        }
-
-        function showCelebration() {
-            const celebration = document.getElementById('celebration');
-            celebration.classList.add('show');
-
-            // Hide after 3 seconds
-            setTimeout(() => {
-                celebration.classList.remove('show');
-            }, 3500);
-        }
-
-        /* ============================================
-           KEYBOARD NAVIGATION
-           ============================================ */
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                moveCarousel(-1);
-            } else if (e.key === 'ArrowRight') {
-                moveCarousel(1);
-            }
-        });
-
-        // Dropdown Logic (click anywhere on slide)
-        function toggleUpdate(index) {
-            const details = document.querySelectorAll('.update-detail');
-            const targetDetail = document.getElementById(`detail-${index}`);
-            const isActive = targetDetail.classList.contains('active');
-
-            // Close all
-            details.forEach(detail => detail.classList.remove('active'));
-
-            // Toggle target
-            if (!isActive) {
-                targetDetail.classList.add('active');
-            }
-        }
-
-        // Hamburger Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navbar = document.querySelector('.navbar');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navbar.classList.toggle('open');
-            const isOpen = navbar.classList.contains('open');
-            hamburger.setAttribute('aria-expanded', isOpen);
-        });
-
-        // Close menu when clicking a link
-        navbar.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navbar.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navbar.classList.contains('open')) {
-                hamburger.classList.remove('active');
-                navbar.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-            }
-        });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
     </script>
 </body>
 </html>
