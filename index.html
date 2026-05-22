@@ -85,48 +85,127 @@
                 </div>
 
                 <div class="veloxis-updates">
-                    <h4>Project Updates</h4>
-                    <div class="carousel-wrapper">
-                        <div class="carousel-container" id="carousel" role="region" aria-label="Project updates carousel">
-                            <div class="carousel-item" tabindex="0" role="button" aria-label="View Update 1: Model Training" onclick="toggleUpdate(0)">
-                                <img src="Data Train ss.png" alt="VELOXIS model training in progress" loading="lazy">
-                                <div class="item-caption">Model Training</div>
-                            </div>
-                            <div class="carousel-item" tabindex="0" role="button" aria-label="View Update 2: Data Collection" onclick="toggleUpdate(1)">
-                                <img src="https://via.placeholder.com/800x400?text=Data+Collection" alt="Data collection at intersection" loading="lazy">
-                                <div class="item-caption">Data Collection</div>
-                            </div>
-                            <div class="carousel-item" tabindex="0" role="button" aria-label="View Update 3: Field Testing" onclick="toggleUpdate(2)">
-                                <img src="https://via.placeholder.com/800x400?text=Field+Testing" alt="Field testing results" loading="lazy">
-                                <div class="item-caption">Field Testing</div>
-                            </div>
+            <h4>Project Updates</h4>
+            <div class="carousel-wrapper" id="carouselWrapper">
+                <div class="carousel-container" id="carousel" role="region" aria-label="Project updates carousel">
+                    <div class="carousel-slide" data-slide="0">
+                        <div class="slide-image-container">
+                            <img src="https://via.placeholder.com/800x400?text=Model+Training" alt="VELOXIS model training in progress" loading="lazy">
                         </div>
-                        <button class="carousel-btn prev" onclick="moveCarousel(-1)" aria-label="Previous slide">❮</button>
-                        <button class="carousel-btn next" onclick="moveCarousel(1)" aria-label="Next slide">❯</button>
+                        <div class="item-caption">Model Training</div>
+                        <button class="like-btn" aria-label="Like this update" onclick="toggleLike(this)">
+                            <span class="heart">❤️</span>
+                            <span class="like-count">0</span>
+                        </button>
                     </div>
-
-                    <!-- Carousel Dots -->
-                    <div class="carousel-dots" role="tablist" aria-label="Carousel slides">
-                        <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1" onclick="goToSlide(0)"></button>
-                        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" onclick="goToSlide(1)"></button>
-                        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 3" onclick="goToSlide(2)"></button>
+                    <div class="carousel-slide" data-slide="1">
+                        <div class="slide-image-container">
+                            <img src="https://via.placeholder.com/800x400?text=Data+Collection" alt="Data collection at intersection" loading="lazy">
+                        </div>
+                        <div class="item-caption">Data Collection</div>
+                        <button class="like-btn" aria-label="Like this update" onclick="toggleLike(this)">
+                            <span class="heart">❤️</span>
+                            <span class="like-count">0</span>
+                        </button>
                     </div>
-
-                    <div class="update-details-container">
-                        <div class="update-detail" id="detail-0" role="region" aria-label="Update 1 details">
-                            <h5>Model Training Update</h5>
-                            <p>Successfully trained the YOLOv11 model on 5,000+ locally sourced images of mixed traffic in Dhaka. Achieved high accuracy in detecting rickshaws, CNGs, and buses.</p>
+                    <div class="carousel-slide" data-slide="2">
+                        <div class="slide-image-container">
+                            <img src="https://via.placeholder.com/800x400?text=Field+Testing" alt="Field testing results" loading="lazy">
                         </div>
-                        <div class="update-detail" id="detail-1" role="region" aria-label="Update 2 details">
-                            <h5>Data Collection Phase</h5>
-                            <p>Completed extensive video data collection at 10 major intersections. This data is being used to calibrate the saturation flow models for local conditions.</p>
-                        </div>
-                        <div class="update-detail" id="detail-2" role="region" aria-label="Update 3 details">
-                            <h5>Field Testing Results</h5>
-                            <p>Initial field tests show a 92% correlation with manual counting methods. Working on optimizing the real-time processing speed for mobile devices.</p>
-                        </div>
+                        <div class="item-caption">Field Testing</div>
+                        <button class="like-btn" aria-label="Like this update" onclick="toggleLike(this)">
+                            <span class="heart">❤️</span>
+                            <span class="like-count">0</span>
+                        </button>
                     </div>
                 </div>
+
+                <!-- Floating Navigation Arrows -->
+                <button class="carousel-nav carousel-btn prev" onclick="moveCarousel(-1)" aria-label="Previous slide">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-nav carousel-btn next" onclick="moveCarousel(1)" aria-label="Next slide">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Progress Bar -->
+                <div class="carousel-progress">
+                    <div class="carousel-progress-fill" id="progressFill"></div>
+                </div>
+
+                <!-- Swipe Indicator -->
+                <div class="swipe-indicator">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+                    </svg>
+                    <span>Swipe to navigate</span>
+                </div>
+            </div>
+
+            <!-- Enhanced Dots with Labels -->
+            <div class="carousel-dots" role="tablist" aria-label="Carousel slides">
+                <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1" onclick="goToSlide(0)">
+                    <span class="dot-label">Model</span>
+                </button>
+                <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" onclick="goToSlide(1)">
+                    <span class="dot-label">Data</span>
+                </button>
+                <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 3" onclick="goToSlide(2)">
+                    <span class="dot-label">Testing</span>
+                </button>
+            </div>
+
+            <!-- Gallery Stats -->
+            <div class="gallery-stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="slidesViewed">1</span>
+                    <span class="stat-label">/ <span id="totalSlides">3</span> viewed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="totalLikes">0</span>
+                    <span class="stat-label">likes</span>
+                </div>
+                <button class="explore-all-btn" onclick="exploreAllSlides()" id="exploreBtn">
+                    <span>Explore All</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12,6 12,12 16,14"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="update-details-container">
+                <div class="update-detail" id="detail-0" role="region" aria-label="Update 1 details">
+                    <h5>Model Training Update</h5>
+                    <p>Successfully trained the YOLOv11 model on 5,000+ locally sourced images of mixed traffic in Dhaka. Achieved high accuracy in detecting rickshaws, CNGs, and buses.</p>
+                </div>
+                <div class="update-detail" id="detail-1" role="region" aria-label="Update 2 details">
+                    <h5>Data Collection Phase</h5>
+                    <p>Completed extensive video data collection at 10 major intersections. This data is being used to calibrate the saturation flow models for local conditions.</p>
+                </div>
+                <div class="update-detail" id="detail-2" role="region" aria-label="Update 3 details">
+                    <h5>Field Testing Results</h5>
+                    <p>Initial field tests show a 92% correlation with manual counting methods. Working on optimizing the real-time processing speed for mobile devices.</p>
+                </div>
+            </div>
+
+            <!-- Celebration Overlay -->
+            <div class="celebration-overlay" id="celebration">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="celebration-text">
+                    <span class="emoji">🎉</span>
+                    <span>You've explored all updates!</span>
+                </div>
+            </div>
+        </div>
             </div>
 
             <div class="project">
@@ -247,12 +326,29 @@
             progressBar.setAttribute("aria-valuenow", Math.round(scrolled));
         });
 
-        // Carousel Logic
+        /* ============================================
+           ENHANCED CAROUSEL LOGIC
+           ============================================ */
+
         let currentSlide = 0;
         let autoAdvanceInterval;
-        const totalSlides = document.querySelectorAll('.carousel-item').length;
+        let isDragging = false;
+        let startPos = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID;
+        let currentLikes = [0, 0, 0];
+        let viewedSlides = new Set([0]);
+        let allExplored = false;
+
+        const totalSlides = document.querySelectorAll('.carousel-slide').length;
         const carousel = document.getElementById('carousel');
+        const wrapper = document.getElementById('carouselWrapper');
         const dots = document.querySelectorAll('.carousel-dot');
+
+        // Initialize gallery stats
+        document.getElementById('totalSlides').textContent = totalSlides;
+        updateGalleryStats();
 
         function updateCarousel() {
             const offset = -currentSlide * 100;
@@ -264,10 +360,29 @@
                 dot.setAttribute('aria-selected', index === currentSlide);
             });
 
+            // Update progress bar
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+
+            // Track viewed slides
+            if (!viewedSlides.has(currentSlide)) {
+                viewedSlides.add(currentSlide);
+                updateGalleryStats();
+            }
+
             // Close all details when moving
             document.querySelectorAll('.update-detail').forEach(detail => {
                 detail.classList.remove('active');
             });
+
+            // Show detail for current slide
+            const targetDetail = document.getElementById(`detail-${currentSlide}`);
+            if (targetDetail) {
+                targetDetail.classList.add('active');
+            }
+
+            // Check for completion
+            checkAllExplored();
         }
 
         function moveCarousel(direction) {
@@ -285,7 +400,7 @@
         function startAutoAdvance() {
             autoAdvanceInterval = setInterval(() => {
                 moveCarousel(1);
-            }, 5000); // 5 seconds
+            }, 5000);
         }
 
         function resetAutoAdvance() {
@@ -297,10 +412,163 @@
         startAutoAdvance();
 
         // Pause auto-advance on user interaction
-        carousel.addEventListener('mouseenter', () => clearInterval(autoAdvanceInterval));
-        carousel.addEventListener('mouseleave', startAutoAdvance);
+        wrapper.addEventListener('mouseenter', () => clearInterval(autoAdvanceInterval));
+        wrapper.addEventListener('mouseleave', startAutoAdvance);
 
-        // Dropdown Logic
+        /* ============================================
+           DRAG / SWIPE GESTURES
+           ============================================ */
+
+        // Touch events
+        wrapper.addEventListener('touchstart', touchStart, { passive: true });
+        wrapper.addEventListener('touchend', touchEnd, { passive: true });
+        wrapper.addEventListener('touchmove', touchMove, { passive: false });
+
+        // Mouse events (desktop drag)
+        wrapper.addEventListener('mousedown', mouseDown);
+        window.addEventListener('mouseup', mouseUp);
+        wrapper.addEventListener('mousemove', mouseMove);
+
+        function touchStart(index) {
+            return function(event) {
+                startPos = getPositionX(event);
+                isDragging = true;
+                cancelAnimationFrame(animationID);
+            }
+        }
+        wrapper.addEventListener('touchstart', touchStart(0));
+
+        function touchMove(event) {
+            if (isDragging) {
+                const currentPosition = getPositionX(event);
+                const diff = currentPosition - startPos;
+                const threshold = 50;
+
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        moveCarousel(-1);
+                    } else {
+                        moveCarousel(1);
+                    }
+                    isDragging = false;
+                }
+            }
+        }
+
+        function touchEnd() {
+            isDragging = false;
+        }
+
+        function mouseDown(event) {
+            startPos = event.clientX;
+            isDragging = true;
+            wrapper.style.cursor = 'grabbing';
+        }
+
+        function mouseMove(event) {
+            if (!isDragging) return;
+
+            const currentPosition = event.clientX;
+            const diff = currentPosition - startPos;
+            const threshold = 50;
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    moveCarousel(-1);
+                } else {
+                    moveCarousel(1);
+                }
+                isDragging = false;
+                wrapper.style.cursor = 'grab';
+            }
+        }
+
+        function mouseUp() {
+            isDragging = false;
+            wrapper.style.cursor = 'grab';
+        }
+
+        function getPositionX(event) {
+            return event.type.includes('touch') ? event.touches[0].clientX : event.clientX;
+        }
+
+        /* ============================================
+           LIKE BUTTONS
+           ============================================ */
+
+        function toggleLike(btn) {
+            const countEl = btn.querySelector('.like-count');
+            const heart = btn.querySelector('.heart');
+            const slideIndex = currentSlide;
+            const isLiked = btn.classList.contains('liked');
+
+            if (isLiked) {
+                currentLikes[slideIndex]--;
+                btn.classList.remove('liked');
+                heart.textContent = '🤍';
+            } else {
+                currentLikes[slideIndex]++;
+                btn.classList.add('liked');
+                heart.textContent = '❤️';
+
+                // Heart pop animation
+                heart.style.animation = 'heartPop 0.4s ease-out';
+                setTimeout(() => heart.style.animation = '', 400);
+            }
+
+            countEl.textContent = currentLikes[slideIndex];
+            updateGalleryStats();
+        }
+
+        /* ============================================
+           GALLERY STATS & TRACKING
+           ============================================ */
+
+        function updateGalleryStats() {
+            document.getElementById('slidesViewed').textContent = viewedSlides.size;
+            document.getElementById('totalLikes').textContent = currentLikes.reduce((a, b) => a + b, 0);
+
+            const exploreBtn = document.getElementById('exploreBtn');
+            if (viewedSlides.size === totalSlides) {
+                exploreBtn.classList.add('completed');
+                exploreBtn.querySelector('span').textContent = 'All Explored!';
+            }
+        }
+
+        function checkAllExplored() {
+            if (viewedSlides.size === totalSlides && !allExplored) {
+                allExplored = true;
+                showCelebration();
+            }
+        }
+
+        function exploreAllSlides() {
+            moveCarousel(1);
+        }
+
+        function showCelebration() {
+            const celebration = document.getElementById('celebration');
+            celebration.classList.add('show');
+
+            // Hide after 3 seconds
+            setTimeout(() => {
+                celebration.classList.remove('show');
+            }, 3500);
+        }
+
+        /* ============================================
+           KEYBOARD NAVIGATION
+           ============================================ */
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                moveCarousel(-1);
+            } else if (e.key === 'ArrowRight') {
+                moveCarousel(1);
+            }
+        });
+
+        // Dropdown Logic (click anywhere on slide)
         function toggleUpdate(index) {
             const details = document.querySelectorAll('.update-detail');
             const targetDetail = document.getElementById(`detail-${index}`);
@@ -314,16 +582,6 @@
                 targetDetail.classList.add('active');
             }
         }
-
-        // Keyboard navigation for carousel
-        document.querySelectorAll('.carousel-item').forEach((item, index) => {
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggleUpdate(index);
-                }
-            });
-        });
 
         // Hamburger Menu Toggle
         const hamburger = document.querySelector('.hamburger');
