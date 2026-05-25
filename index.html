@@ -29,6 +29,7 @@
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
         <a href="#leadership">Leadership</a>
+        <a href="#sucsu">SUCSU</a>
         <a href="#impact">Impact</a>
         <a href="#travel">Exploration</a>
         <a href="#contact">Contact</a>
@@ -188,6 +189,55 @@
             </div>
         </section>
 
+        <section id="sucsu" aria-labelledby="sucsu-heading">
+            <h2 id="sucsu-heading">Student Council — SUCSU</h2>
+            <div class="project">
+                <h3>Student Council Candidate</h3>
+                <p>
+                    Ran an issue-focused campaign addressing campus health, sustainability, and environmental awareness as Health & Environment Secretary candidate.
+                </p>
+
+                <!-- Premium Overlapping Carousel: SUCSU -->
+                <div class="overlapping-carousel" id="sucsuCarousel" role="region" aria-label="Student Council campaign gallery">
+                    <span class="pause-indicator">⏸ Paused</span>
+                    <div class="carousel-container">
+                        <button class="carousel-nav-btn carousel-prev" aria-label="Previous photo">‹</button>
+                        <div class="carousel-track-overlap">
+                            <div class="card-stack" data-active="0">
+                                <div class="carousel-card">
+                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b127543?w=400&h=300&fit=crop" alt="Campaign Rally" loading="lazy">
+                                    <div class="card-content">
+                                        <h5>Campaign Rally</h5>
+                                        <p>Holding a rally to raise awareness</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&h=300&fit=crop" alt="Meeting Students" loading="lazy">
+                                    <div class="card-content">
+                                        <h5>Student Outreach</h5>
+                                        <p>Listening to student concerns</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="Campus Event" loading="lazy">
+                                    <div class="card-content">
+                                        <h5>Policy Discussion</h5>
+                                        <p>Discussing environmental policies</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-nav-btn carousel-next" aria-label="Next photo">›</button>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-dot active" data-index="0" aria-label="Go to photo 1"></button>
+                        <button class="carousel-dot" data-index="1" aria-label="Go to photo 2"></button>
+                        <button class="carousel-dot" data-index="2" aria-label="Go to photo 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="impact" aria-labelledby="impact-heading">
             <h2 id="impact-heading">Sustainability & Social Impact</h2>
             <div class="project">
@@ -195,6 +245,45 @@
                 <p>
                     Participated in environmental awareness campaigns including Clean SUST Movement, Zero Waste Campus, and school awareness campaigns. Activities conducted in collaboration with UNICEF, FIVDB, and the British Council.
                 </p>
+
+                <!-- Premium Overlapping Carousel: Green Explore Society -->
+                <div class="overlapping-carousel" id="gesCarousel" role="region" aria-label="Green Explore Society photo gallery">
+                    <span class="pause-indicator">⏸ Paused</span>
+                    <div class="carousel-container">
+                        <button class="carousel-nav-btn carousel-prev" aria-label="Previous photo">‹</button>
+                        <div class="carousel-track-overlap">
+                            <div class="card-stack" data-active="0">
+                                <div class="carousel-card">
+                                    <img src="Green Explore Society/Tree plantation programme by GES.jpeg" alt="Tree Plantation Programme" loading="lazy">
+                                    <div class="card-content">
+                                        <h5>Tree Plantation</h5>
+                                        <p>Planting over 500 saplings to restore green cover</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <img src="Green Explore Society/Vaccination programme.jpeg" alt="Vaccination Programme" loading="lazy">
+                                    <div class="card-content">
+                                        <h5>Health Awareness</h5>
+                                        <p>Community health camp in rural areas</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-card">
+                                    <img src="Green Explore Society/Protest against Fireworks.jpeg" alt="Protest Against Fireworks" loading="lazy">
+                                    <div class="card-content">
+                                        <h5>Environmental Rally</h5>
+                                        <p>Awareness campaign against fireworks</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-nav-btn carousel-next" aria-label="Next photo">›</button>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button class="carousel-dot active" data-index="0" aria-label="Go to photo 1"></button>
+                        <button class="carousel-dot" data-index="1" aria-label="Go to photo 2"></button>
+                        <button class="carousel-dot" data-index="2" aria-label="Go to photo 3"></button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -421,6 +510,117 @@
         galleryTrack.addEventListener('mouseleave', startGalleryAutoplay);
 
         startGalleryAutoplay();
+
+        /* ============================================
+           PREMIUM OVERLAPPING CAROUSEL
+           ============================================ */
+        function initOverlappingCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+
+            const stack = carousel.querySelector('.card-stack');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            const prevBtn = carousel.querySelector('.carousel-prev');
+            const nextBtn = carousel.querySelector('.carousel-next');
+            const cards = carousel.querySelectorAll('.carousel-card');
+
+            let currentIndex = 0;
+            let autoplayInterval;
+            const totalSlides = cards.length;
+
+            function updateCarousel() {
+                stack.setAttribute('data-active', currentIndex);
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoplayInterval);
+                startAutoplay();
+            }
+
+            // Arrow navigation
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                prevSlide();
+                resetAutoplay();
+            });
+
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                nextSlide();
+                resetAutoplay();
+            });
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetAutoplay();
+                });
+            });
+
+            // Keyboard navigation
+            carousel.setAttribute('tabindex', '0');
+            carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                    resetAutoplay();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                    resetAutoplay();
+                }
+            });
+
+            // Touch swipe
+            let touchStartX = 0;
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                const diff = e.changedTouches[0].screenX - touchStartX;
+                if (diff > 50) prevSlide();
+                if (diff < -50) nextSlide();
+                resetAutoplay();
+            }, { passive: true });
+
+            // Pause on hover
+            carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+            carousel.addEventListener('mouseleave', startAutoplay);
+
+            // Card click advances carousel
+            cards.forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                    resetAutoplay();
+                });
+            });
+
+            // Start autoplay
+            startAutoplay();
+        }
+
+        // Initialize both overlapping carousels
+        initOverlappingCarousel('gesCarousel');
+        initOverlappingCarousel('sucsuCarousel');
     </script>
 </body>
 </html>
