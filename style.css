@@ -458,6 +458,29 @@ section:last-of-type {
     background: var(--bg-tertiary);
 }
 
+/* Achievement List - styled differently for SUCSU achievements */
+.achievement-list li {
+    margin-bottom: 14px;
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-left-color: var(--accent);
+    background: var(--bg-secondary);
+    padding: 14px 18px;
+}
+
+.achievement-list li:hover {
+    transform: translateX(6px);
+    border-left-color: var(--signal-green);
+}
+
+/* Lead paragraph */
+.lead {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+}
+
 /* Links */
 .link-group {
     display: flex;
