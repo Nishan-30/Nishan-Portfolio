@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="noise" aria-hidden="true"></div>
     <div id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Page scroll progress"></div>
 
     <!-- Top Bar: Hamburger + Dark Mode Toggle -->
@@ -36,12 +37,35 @@
     </nav>
 
     <header class="header-container">
-        <div class="header-text">
-            <h1>Mohammad Hanif Hasan Nishan</h1>
-            <p class="subtitle">Transportation Engineering · Traffic Systems · Sustainable Mobility</p>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="header-inner">
+            <div class="header-text">
+                <span class="eyebrow"><span class="dot-live" aria-hidden="true"></span>Transportation Engineer · Sylhet, BD</span>
+                <h1>Mohammad Hanif<br>Hasan Nishan</h1>
+                <p class="subtitle">Designing <span class="accent">data-driven mobility systems</span> for mixed-traffic cities — where traffic engineering, machine vision, and policy meet.</p>
+                <div class="header-stats" role="list" aria-label="Portfolio highlights">
+                    <div class="header-stat" role="listitem">
+                        <span class="stat-num">6+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="header-stat" role="listitem">
+                        <span class="stat-num">1</span>
+                        <span class="stat-label">Research Papers</span>
+                    </div>
+                    <div class="header-stat" role="listitem">
+                        <span class="stat-num">750+</span>
+                        <span class="stat-label">Students Represented</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-image">
+                <img src="profile.jpg" alt="Profile photo of Mohammad Hanif Hasan Nishan" loading="eager">
+                <span class="status-pill">Available for collaboration</span>
+            </div>
         </div>
-        <div class="header-image">
-            <img src="profile.jpg" alt="Profile photo of Mohammad Hanif Hasan Nishan" loading="eager">
+        <div class="scroll-cue" aria-hidden="true">
+            <span>Scroll</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
     </header>
 
@@ -61,76 +85,135 @@
         </section>
 
         <section aria-labelledby="skills-heading">
-            <h2 id="skills-heading">Skills</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">AutoCAD</span>
-                <span class="skill-tag">QGIS</span>
-                <span class="skill-tag">ETABS</span>
-                <span class="skill-tag">Data Analysis</span>
-                <span class="skill-tag">Research Writing</span>
-                <span class="skill-tag">Project Coordination</span>
+            <h2 id="skills-heading">Skills & Tools</h2>
+            <div class="skill-group">
+                <div class="skill-group-label">Technical</div>
+                <div class="skill-group-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">YOLOv11</span>
+                    <span class="skill-tag">SUMO Simulation</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-label">Tools</div>
+                <div class="skill-group-tags">
+                    <span class="skill-tag">AutoCAD</span>
+                    <span class="skill-tag">QGIS</span>
+                    <span class="skill-tag">ETABS</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-label">Professional</div>
+                <div class="skill-group-tags">
+                    <span class="skill-tag">Research Writing</span>
+                    <span class="skill-tag">Project Coordination</span>
+                    <span class="skill-tag">Stakeholder Engagement</span>
+                </div>
             </div>
         </section>
 
         <section id="projects" aria-labelledby="projects-heading">
             <h2 id="projects-heading">Selected Projects</h2>
 
-            <div class="project">
-                <h3>VELOXIS</h3>
+            <div class="project feature">
+                <span class="feature-badge">Featured Project · Active Development</span>
+                <div class="project-meta">
+                    <span>2025 — Present</span>
+                    <span class="meta-dot"></span>
+                    <span>Computer Vision · Transportation</span>
+                </div>
+                <div class="project-title-wrap">
+                    <h3>VELOXIS</h3>
+                </div>
                 <p>
                     AI-powered traffic analysis platform built for mixed-traffic conditions in Bangladesh. Combines a custom-trained YOLOv11 model with advanced traffic engineering metrics including vehicle counting, PHF, saturation flow, LOS, V85, queue length, and turning movement counts. Designed for researchers and engineers seeking accurate, low-cost, locally-adapted traffic data.
                 </p>
-                <div class="link-group">
-                    <a href="https://github.com/Nishan-30/Veloxis" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+                <div class="project-tags">
+                    <span class="chip">Python</span>
+                    <span class="chip">YOLOv11</span>
+                    <span class="chip">OpenCV</span>
+                    <span class="chip">SUMO</span>
+                    <span class="chip">HCM Metrics</span>
+                </div>
+                <div class="btn-group">
+                    <a href="https://github.com/Nishan-30/Veloxis" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View on GitHub</a>
                 </div>
 
-                <!-- ORIGINAL CAROUSEL -->
-                <div class="carousel-section">
-                    <h4>Project Updates</h4>
-                    <div class="carousel-wrapper">
-                        <div class="carousel" id="projectCarousel">
-                            <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop" alt="Model Training" loading="lazy">
-                                <div class="caption">Model Training</div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop" alt="Data Collection" loading="lazy">
-                                <div class="caption">Data Collection</div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ea245?w=800&h=400&fit=crop" alt="Field Testing" loading="lazy">
-                                <div class="caption">Field Testing</div>
-                            </div>
-                        </div>
-                        <button class="carousel-btn prev-btn" id="prevBtn">❮</button>
-                        <button class="carousel-btn next-btn" id="nextBtn">❯</button>
+                <!-- PREMIUM OVERLAPPING CAROUSEL -->
+                <div class="premium-carousel" id="veloxisCarousel" role="region" aria-label="VELOXIS project updates">
+                    <span class="pc-pause" aria-hidden="true">⏸ Hover to pause</span>
+                    <div class="carousel-header">
+                        <h4>Project Updates</h4>
+                        <p class="carousel-sub">Click the side cards to navigate</p>
                     </div>
-                    <div class="carousel-dots" id="carouselDots">
-                        <button class="dot active" data-index="0"></button>
-                        <button class="dot" data-index="1"></button>
-                        <button class="dot" data-index="2"></button>
+                    <div class="pc-stage">
+                        <div class="pc-stack" data-pos="1" id="veloxisStack">
+                            <article class="pc-card" data-index="0" aria-current="false" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=600&fit=crop" alt="Model Training" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Model · YOLOv11</span>
+                                    <h5 class="pc-title">Model Training</h5>
+                                    <p class="pc-desc">Trained on 5,000+ locally sourced images with strong accuracy on rickshaws, CNGs, and buses in Dhaka traffic.</p>
+                                </div>
+                            </article>
+                            <article class="pc-card" data-index="1" aria-current="true" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&h=600&fit=crop" alt="Data Collection" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Data · Field</span>
+                                    <h5 class="pc-title">Data Collection</h5>
+                                    <p class="pc-desc">Video data captured at 10 major intersections, used to calibrate saturation flow models for local conditions.</p>
+                                </div>
+                            </article>
+                            <article class="pc-card" data-index="2" aria-current="false" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ea245?w=900&h=600&fit=crop" alt="Field Testing" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Testing · Validation</span>
+                                    <h5 class="pc-title">Field Testing</h5>
+                                    <p class="pc-desc">92% correlation with manual counting. Mobile optimization and edge deployment in progress.</p>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <!-- Slide Description -->
-                    <div class="slide-description" id="slideDesc">
-                        <div class="desc-item active" data-desc="0">
-                            <p><strong>Model Training</strong> — Trained YOLOv11 on 5,000+ locally sourced images. Achieved high accuracy detecting rickshaws, CNGs, and buses in Dhaka traffic.</p>
+                    <div class="pc-footer">
+                        <button class="pc-nav" id="veloxisPrev" aria-label="Previous slide">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <div class="pc-dots" id="veloxisDots">
+                            <button class="pc-dot" data-index="0" aria-label="Go to slide 1"></button>
+                            <button class="pc-dot active" data-index="1" aria-label="Go to slide 2"></button>
+                            <button class="pc-dot" data-index="2" aria-label="Go to slide 3"></button>
                         </div>
-                        <div class="desc-item" data-desc="1">
-                            <p><strong>Data Collection</strong> — Collected video data at 10 major intersections. Used to calibrate saturation flow models for local conditions.</p>
-                        </div>
-                        <div class="desc-item" data-desc="2">
-                            <p><strong>Field Testing</strong> — 92% correlation with manual counting. Mobile optimization in progress.</p>
-                        </div>
+                        <button class="pc-nav" id="veloxisNext" aria-label="Next slide">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <div class="project">
-                <h3>Pathguard</h3>
+                <div class="project-meta">
+                    <span>2024</span>
+                    <span class="meta-dot"></span>
+                    <span>Conceptual Design</span>
+                </div>
+                <div class="project-title-wrap">
+                    <h3>Pathguard</h3>
+                </div>
                 <p>
                     Conceptual redesign proposal aimed at improving traffic efficiency and pedestrian safety through geometric and operational modifications.
                 </p>
+                <div class="project-tags">
+                    <span class="chip">Urban Design</span>
+                    <span class="chip">Pedestrian Safety</span>
+                    <span class="chip">Geometric Redesign</span>
+                </div>
             </div>
         </section>
 
@@ -148,42 +231,46 @@
         <section id="leadership" aria-labelledby="leadership-heading">
             <h2 id="leadership-heading">Leadership & Governance</h2>
 
-            <div class="project">
-                <h3>General Secretary — ACEE, SUST</h3>
-                <p>
-                    Coordinated a 24-member executive committee representing ~250 Civil and Environmental Engineering students. Supported academic programs, seminars, and departmental student engagement while facilitating communication between students and faculty.
-                </p>
-            </div>
-
-            <div class="project">
-                <h3>President — Chattogram Forum, SUST</h3>
-                <p>
-                    Led a 45+ member executive committee representing nearly 500 students from the Chattogram region. Organized networking events, cultural programs, and student engagement initiatives.
-                </p>
-            </div>
-
-            <div class="project">
-                <h3>Candidate — Health & Environment Secretary, Student Council</h3>
-                <p>
-                    Ran an issue-focused campaign addressing campus health, sustainability, and environmental awareness.
-                </p>
-                <!-- Photo Gallery -->
-                <div class="photo-gallery">
-                    <button class="gallery-btn prev-gallery" id="prevGallery">❮</button>
-                    <div class="gallery-track" id="galleryTrack">
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523240795612-9a054b127543?w=400&h=300&fit=crop" alt="Campaign Photo 1"></div>
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&h=300&fit=crop" alt="Campaign Photo 2"></div>
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="Campaign Photo 3"></div>
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517486808906-6ca8b7f04846?w=400&h=300&fit=crop" alt="Campaign Photo 4"></div>
-                        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523580494863-6f3030424c87?w=400&h=300&fit=crop" alt="Campaign Photo 5"></div>
+            <div class="leadership-rail">
+                <div class="project leadership-card">
+                    <span class="role-badge">Leadership · Current</span>
+                    <div class="project-title-wrap">
+                        <h3>General Secretary — ACEE, SUST</h3>
                     </div>
-                    <button class="gallery-btn next-gallery" id="nextGallery">❯</button>
-                    <div class="gallery-dots" id="galleryDots">
-                        <button class="dot active" data-index="0"></button>
-                        <button class="dot" data-index="1"></button>
-                        <button class="dot" data-index="2"></button>
-                        <button class="dot" data-index="3"></button>
-                        <button class="dot" data-index="4"></button>
+                    <p>
+                        Coordinated a 24-member executive committee representing ~250 Civil and Environmental Engineering students. Supported academic programs, seminars, and departmental student engagement while facilitating communication between students and faculty.
+                    </p>
+                    <div class="project-tags">
+                        <span class="chip">24 Members</span>
+                        <span class="chip">250+ Students</span>
+                    </div>
+                </div>
+
+                <div class="project leadership-card">
+                    <span class="role-badge">Leadership · Alumni</span>
+                    <div class="project-title-wrap">
+                        <h3>President — Chattogram Forum, SUST</h3>
+                    </div>
+                    <p>
+                        Led a 45+ member executive committee representing nearly 500 students from the Chattogram region. Organized networking events, cultural programs, and student engagement initiatives.
+                    </p>
+                    <div class="project-tags">
+                        <span class="chip">45+ Members</span>
+                        <span class="chip">~500 Students</span>
+                    </div>
+                </div>
+
+                <div class="project leadership-card">
+                    <span class="role-badge">Campaign · 2024</span>
+                    <div class="project-title-wrap">
+                        <h3>Candidate — Health & Environment Secretary</h3>
+                    </div>
+                    <p>
+                        Ran an issue-focused campaign addressing campus health, sustainability, and environmental awareness across Shahjalal University of Science and Technology.
+                    </p>
+                    <div class="project-tags">
+                        <span class="chip">Issue-Focused</span>
+                        <span class="chip">Sustainability</span>
                     </div>
                 </div>
             </div>
@@ -206,41 +293,58 @@
                 </ul>
 
                 <!-- Premium Overlapping Carousel: SUCSU -->
-                <div class="overlapping-carousel" id="sucsuCarousel" role="region" aria-label="Student Council campaign gallery">
-                    <span class="pause-indicator">⏸ Paused</span>
-                    <div class="carousel-container">
-                        <button class="carousel-nav-btn carousel-prev" aria-label="Previous photo">‹</button>
-                        <div class="carousel-track-overlap">
-                            <div class="card-stack" data-active="0">
-                                <div class="carousel-card">
-                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b127543?w=400&h=300&fit=crop" alt="Campaign Rally" loading="lazy">
-                                    <div class="card-content">
-                                        <h5>Campaign Rally</h5>
-                                        <p>Holding a rally to raise awareness</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-card">
-                                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=400&h=300&fit=crop" alt="Meeting Students" loading="lazy">
-                                    <div class="card-content">
-                                        <h5>Student Outreach</h5>
-                                        <p>Listening to student concerns</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-card">
-                                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop" alt="Campus Event" loading="lazy">
-                                    <div class="card-content">
-                                        <h5>Policy Discussion</h5>
-                                        <p>Discussing environmental policies</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-nav-btn carousel-next" aria-label="Next photo">›</button>
+                <div class="premium-carousel" id="sucsuCarousel" role="region" aria-label="Student Council campaign gallery">
+                    <span class="pc-pause" aria-hidden="true">⏸ Hover to pause</span>
+                    <div class="carousel-header">
+                        <h4>Campaign Gallery</h4>
+                        <p class="carousel-sub">Click the side cards to navigate</p>
                     </div>
-                    <div class="carousel-indicators">
-                        <button class="carousel-dot active" data-index="0" aria-label="Go to photo 1"></button>
-                        <button class="carousel-dot" data-index="1" aria-label="Go to photo 2"></button>
-                        <button class="carousel-dot" data-index="2" aria-label="Go to photo 3"></button>
+                    <div class="pc-stage">
+                        <div class="pc-stack" data-pos="0" id="sucsuStack">
+                            <article class="pc-card" data-index="0" aria-current="true" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b127543?w=900&h=600&fit=crop" alt="Campaign Rally" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Rally · Awareness</span>
+                                    <h5 class="pc-title">Campaign Rally</h5>
+                                    <p class="pc-desc">Holding a campus-wide rally to raise awareness for environmental and health issues.</p>
+                                </div>
+                            </article>
+                            <article class="pc-card" data-index="1" aria-current="false" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=900&h=600&fit=crop" alt="Student Outreach" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Outreach · 1:1</span>
+                                    <h5 class="pc-title">Student Outreach</h5>
+                                    <p class="pc-desc">Listening to student concerns and capturing real campus issues for policy proposals.</p>
+                                </div>
+                            </article>
+                            <article class="pc-card" data-index="2" aria-current="false" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&h=600&fit=crop" alt="Policy Discussion" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Policy · EIA</span>
+                                    <h5 class="pc-title">Policy Discussion</h5>
+                                    <p class="pc-desc">Discussing environmental policies and sustainable campus development with stakeholders.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="pc-footer">
+                        <button class="pc-nav" id="sucsuPrev" aria-label="Previous photo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <div class="pc-dots" id="sucsuDots">
+                            <button class="pc-dot active" data-index="0" aria-label="Go to photo 1"></button>
+                            <button class="pc-dot" data-index="1" aria-label="Go to photo 2"></button>
+                            <button class="pc-dot" data-index="2" aria-label="Go to photo 3"></button>
+                        </div>
+                        <button class="pc-nav" id="sucsuNext" aria-label="Next photo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -255,41 +359,58 @@
                 </p>
 
                 <!-- Premium Overlapping Carousel: Green Explore Society -->
-                <div class="overlapping-carousel" id="gesCarousel" role="region" aria-label="Green Explore Society photo gallery">
-                    <span class="pause-indicator">⏸ Paused</span>
-                    <div class="carousel-container">
-                        <button class="carousel-nav-btn carousel-prev" aria-label="Previous photo">‹</button>
-                        <div class="carousel-track-overlap">
-                            <div class="card-stack" data-active="0">
-                                <div class="carousel-card">
-                                    <img src="Green Explore Society/Tree plantation programme by GES.jpeg" alt="Tree Plantation Programme" loading="lazy">
-                                    <div class="card-content">
-                                        <h5>Tree Plantation</h5>
-                                        <p>Planting over 500 saplings to restore green cover</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-card">
-                                    <img src="Green Explore Society/Vaccination programme.jpeg" alt="Vaccination Programme" loading="lazy">
-                                    <div class="card-content">
-                                        <h5>Health Awareness</h5>
-                                        <p>Community health camp in rural areas</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-card">
-                                    <img src="Green Explore Society/Protest against Fireworks.jpeg" alt="Protest Against Fireworks" loading="lazy">
-                                    <div class="card-content">
-                                        <h5>Environmental Rally</h5>
-                                        <p>Awareness campaign against fireworks</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-nav-btn carousel-next" aria-label="Next photo">›</button>
+                <div class="premium-carousel" id="gesCarousel" role="region" aria-label="Green Explore Society photo gallery">
+                    <span class="pc-pause" aria-hidden="true">⏸ Hover to pause</span>
+                    <div class="carousel-header">
+                        <h4>Programme Gallery</h4>
+                        <p class="carousel-sub">Click the side cards to navigate</p>
                     </div>
-                    <div class="carousel-indicators">
-                        <button class="carousel-dot active" data-index="0" aria-label="Go to photo 1"></button>
-                        <button class="carousel-dot" data-index="1" aria-label="Go to photo 2"></button>
-                        <button class="carousel-dot" data-index="2" aria-label="Go to photo 3"></button>
+                    <div class="pc-stage">
+                        <div class="pc-stack" data-pos="2" id="gesStack">
+                            <article class="pc-card" data-index="0" aria-current="false" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="Green Explore Society/Tree plantation programme by GES.jpeg" alt="Tree Plantation Programme" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Plantation · 500+</span>
+                                    <h5 class="pc-title">Tree Plantation</h5>
+                                    <p class="pc-desc">Planting over 500 saplings across campus to restore green cover and biodiversity.</p>
+                                </div>
+                            </article>
+                            <article class="pc-card" data-index="1" aria-current="false" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="Green Explore Society/Vaccination programme.jpeg" alt="Vaccination Programme" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Health · Community</span>
+                                    <h5 class="pc-title">Health Awareness</h5>
+                                    <p class="pc-desc">Community health camp in rural areas in partnership with UNICEF and FIVDB.</p>
+                                </div>
+                            </article>
+                            <article class="pc-card" data-index="2" aria-current="true" tabindex="0">
+                                <div class="pc-image">
+                                    <img src="Green Explore Society/Protest against Fireworks.jpeg" alt="Protest Against Fireworks" loading="lazy">
+                                </div>
+                                <div class="pc-body">
+                                    <span class="pc-tag">Rally · Advocacy</span>
+                                    <h5 class="pc-title">Environmental Rally</h5>
+                                    <p class="pc-desc">Awareness campaign against fireworks to protect air quality and animal welfare.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="pc-footer">
+                        <button class="pc-nav" id="gesPrev" aria-label="Previous photo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                        </button>
+                        <div class="pc-dots" id="gesDots">
+                            <button class="pc-dot" data-index="0" aria-label="Go to photo 1"></button>
+                            <button class="pc-dot" data-index="1" aria-label="Go to photo 2"></button>
+                            <button class="pc-dot active" data-index="2" aria-label="Go to photo 3"></button>
+                        </div>
+                        <button class="pc-nav" id="gesNext" aria-label="Next photo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -311,12 +432,13 @@
 
         <section id="contact" aria-labelledby="contact-heading">
             <h2 id="contact-heading">Get in Touch</h2>
-            <div class="link-group">
-                <a href="CV.pdf" target="_blank" rel="noopener noreferrer">Download CV ↗</a>
-                <a href="mailto:mohammadhanifhasannishan@gmail.com" target="_blank" rel="noopener noreferrer">Email ↗</a>
-                <a href="https://www.linkedin.com/in/md-hanif-hasan-nishan" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                <a href="https://github.com/Nishan-30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                <a href="https://www.facebook.com/Mohammadhanifhasan.nishan/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+            <p>Open to research collaborations, mobility-tech projects, and engineering leadership opportunities. The fastest way to reach me is email.</p>
+            <div class="btn-group">
+                <a href="mailto:mohammadhanifhasannishan@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Send an Email</a>
+                <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Download CV</a>
+                <a href="https://www.linkedin.com/in/md-hanif-hasan-nishan" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
+                <a href="https://github.com/Nishan-30" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
+                <a href="https://www.facebook.com/Mohammadhanifhasan.nishan/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Facebook</a>
             </div>
         </section>
     </main>
@@ -327,14 +449,15 @@
     </footer>
 
     <script>
-        // Dynamic Year
+        /* ============================================
+           CORE: Year, Dark Mode, Progress Bar, Nav
+           ============================================ */
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Dark Mode with Persistence
         const toggle = document.getElementById("darkModeToggle");
         const body = document.body;
 
-        // Check saved preference or system preference
         const savedTheme = localStorage.getItem("darkMode");
         const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
@@ -357,7 +480,7 @@
             const progressBar = document.getElementById("progress-bar");
             progressBar.style.width = scrolled + "%";
             progressBar.setAttribute("aria-valuenow", Math.round(scrolled));
-        });
+        }, { passive: true });
 
         // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburgerBtn');
@@ -369,7 +492,6 @@
             hamburger.setAttribute('aria-expanded', navbar.classList.contains('open'));
         });
 
-        // Close mobile menu when clicking a link
         navbar.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -378,7 +500,6 @@
             });
         });
 
-        // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && navbar.classList.contains('open')) {
                 hamburger.classList.remove('active');
@@ -387,248 +508,225 @@
             }
         });
 
-        // SIMPLE CAROUSEL
-        const carousel = document.getElementById('projectCarousel');
-        const items = carousel.querySelectorAll('.carousel-item');
-        const dots = document.querySelectorAll('.dot');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const descItems = document.querySelectorAll('.desc-item');
-
-        let currentIndex = 0;
-        let autoplayInterval;
-        const totalSlides = items.length;
-
-        function updateCarousel() {
-            // Move track
-            carousel.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-
-            // Update description
-            descItems.forEach((desc, index) => {
-                desc.classList.toggle('active', index === currentIndex);
-            });
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-
-        function startAutoplay() {
-            autoplayInterval = setInterval(nextSlide, 5000);
-        }
-
-        function resetAutoplay() {
-            clearInterval(autoplayInterval);
-            startAutoplay();
-        }
-
-        // Button clicks
-        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoplay(); });
-        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
-
-        // Dot clicks
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                updateCarousel();
-                resetAutoplay();
-            });
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight') { nextSlide(); resetAutoplay(); }
-            if (e.key === 'ArrowLeft') { prevSlide(); resetAutoplay(); }
-        });
-
-        // Touch swipe
-        let touchStartX = 0;
-        carousel.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
-        carousel.addEventListener('touchend', e => {
-            const diff = e.changedTouches[0].screenX - touchStartX;
-            if (diff > 50) prevSlide();
-            if (diff < -50) nextSlide();
-            resetAutoplay();
-        });
-
-        // Pause on hover
-        carousel.parentElement.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-        carousel.parentElement.addEventListener('mouseleave', startAutoplay);
-
-        // Start autoplay
-        startAutoplay();
-
-        /* ============================================
-           PHOTO GALLERY (Student Council)
-           ============================================ */
-        const galleryTrack = document.getElementById('galleryTrack');
-        const galleryItems = galleryTrack.querySelectorAll('.gallery-item');
-        const galleryDots = document.querySelectorAll('#galleryDots .dot');
-        const prevGalleryBtn = document.getElementById('prevGallery');
-        const nextGalleryBtn = document.getElementById('nextGallery');
-
-        let galleryIndex = 0;
-        let galleryAutoplay;
-
-        function updateGallery() {
-            galleryTrack.style.transform = 'translateX(-' + (galleryIndex * 100) + '%)';
-            galleryDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === galleryIndex);
-            });
-        }
-
-        function nextGallerySlide() {
-            galleryIndex = (galleryIndex + 1) % galleryItems.length;
-            updateGallery();
-        }
-
-        function prevGallerySlide() {
-            galleryIndex = (galleryIndex - 1 + galleryItems.length) % galleryItems.length;
-            updateGallery();
-        }
-
-        function startGalleryAutoplay() {
-            galleryAutoplay = setInterval(nextGallerySlide, 4000);
-        }
-
-        function resetGalleryAutoplay() {
-            clearInterval(galleryAutoplay);
-            startGalleryAutoplay();
-        }
-
-        prevGalleryBtn.addEventListener('click', () => { prevGallerySlide(); resetGalleryAutoplay(); });
-        nextGalleryBtn.addEventListener('click', () => { nextGallerySlide(); resetGalleryAutoplay(); });
-
-        galleryDots.forEach((dot, i) => {
-            dot.addEventListener('click', () => { galleryIndex = i; updateGallery(); resetGalleryAutoplay(); });
-        });
-
-        galleryTrack.addEventListener('mouseenter', () => clearInterval(galleryAutoplay));
-        galleryTrack.addEventListener('mouseleave', startGalleryAutoplay);
-
-        startGalleryAutoplay();
-
         /* ============================================
            PREMIUM OVERLAPPING CAROUSEL
+           Three-card stack: prev / active / next
+           Center card is large; sides are scaled down
+           and slightly blurred for depth.
            ============================================ */
-        function initOverlappingCarousel(carouselId) {
+        function initPremiumCarousel(carouselId, { autoplay = true, interval = 5000 } = {}) {
             const carousel = document.getElementById(carouselId);
             if (!carousel) return;
 
-            const stack = carousel.querySelector('.card-stack');
-            const dots = carousel.querySelectorAll('.carousel-dot');
-            const prevBtn = carousel.querySelector('.carousel-prev');
-            const nextBtn = carousel.querySelector('.carousel-next');
-            const cards = carousel.querySelectorAll('.carousel-card');
+            const stack = carousel.querySelector('.pc-stack');
+            const cards = Array.from(carousel.querySelectorAll('.pc-card'));
+            const dots = carousel.querySelectorAll('.pc-dot');
+            const prevBtn = carousel.querySelector('.pc-nav[id$="Prev"]');
+            const nextBtn = carousel.querySelector('.pc-nav[id$="Next"]');
 
-            let currentIndex = 0;
-            let autoplayInterval;
-            const totalSlides = cards.length;
+            if (!stack || cards.length === 0) return;
 
-            function updateCarousel() {
-                stack.setAttribute('data-active', currentIndex);
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
+            const total = cards.length;
+            let active = cards.findIndex(c => c.getAttribute('aria-current') === 'true');
+            if (active < 0) active = 0;
+
+            // Map logical position (0=prev, 1=active, 2=next) to card index
+            // Stack uses CSS [data-pos="0|1|2"] where the middle value is the active card
+            // For each data-pos, cards nth-child(1/2/3) take specific roles.
+            // We pre-assign: cardIndex=0 -> position 0, cardIndex=1 -> position 1, etc.
+            // But to support wrap-around, we rotate the array so the active card sits at position 1.
+
+            let timer = null;
+
+            function render() {
+                // Rotate the cards visually: card at index `active` sits in the center
+                // We rebuild the DOM order so that card[active] is the middle (nth-child(2))
+                const order = [
+                    cards[(active - 1 + total) % total],
+                    cards[active],
+                    cards[(active + 1) % total]
+                ];
+                order.forEach(card => stack.appendChild(card));
+
+                // Tell CSS which card is active: the middle (nth-child(2)) is always the active one
+                // by setting [data-pos] to a fixed value and managing aria-current separately.
+                stack.setAttribute('data-pos', '1');
+
+                // Mark active state for screen readers and visual focus
+                cards.forEach((c) => {
+                    c.setAttribute('aria-current', c === order[1] ? 'true' : 'false');
+                    c.setAttribute('tabindex', c === order[1] ? '0' : '-1');
+                });
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === active);
+                    dot.setAttribute('aria-selected', i === active ? 'true' : 'false');
                 });
             }
 
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateCarousel();
+            function go(delta) {
+                active = (active + delta + total) % total;
+                render();
+                restart();
             }
 
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateCarousel();
+            function setActive(i) {
+                if (i === active) return;
+                active = i;
+                render();
+                restart();
             }
 
-            function startAutoplay() {
-                autoplayInterval = setInterval(nextSlide, 5000);
+            function start() {
+                if (!autoplay) return;
+                timer = setInterval(() => go(1), interval);
             }
 
-            function resetAutoplay() {
-                clearInterval(autoplayInterval);
-                startAutoplay();
+            function stop() {
+                if (timer) { clearInterval(timer); timer = null; }
             }
 
-            // Arrow navigation
-            prevBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                prevSlide();
-                resetAutoplay();
+            function restart() { stop(); start(); }
+
+            // Arrow buttons
+            if (prevBtn) prevBtn.addEventListener('click', (e) => { e.preventDefault(); go(-1); });
+            if (nextBtn) nextBtn.addEventListener('click', (e) => { e.preventDefault(); go(1); });
+
+            // Dots
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', (e) => { e.preventDefault(); setActive(i); });
             });
 
-            nextBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                nextSlide();
-                resetAutoplay();
-            });
-
-            // Dot navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentIndex = index;
-                    updateCarousel();
-                    resetAutoplay();
+            // Click side card to promote it
+            cards.forEach((card) => {
+                card.addEventListener('click', (e) => {
+                    // Don't re-fire if a button inside the card was clicked
+                    if (e.target.closest('a, button')) return;
+                    const idx = cards.indexOf(card);
+                    // Determine which logical slot the clicked card currently sits in
+                    const order = [
+                        cards[(active - 1 + total) % total],
+                        cards[active],
+                        cards[(active + 1) % total]
+                    ];
+                    const slot = order.indexOf(card);
+                    if (slot === 1) return; // center: no-op
+                    if (slot === 0) { go(-1); return; } // left side -> previous
+                    if (slot === 2) { go(1); return; }  // right side -> next
+                    setActive(idx);
+                });
+                // Keyboard support
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft')  { e.preventDefault(); go(-1); }
+                    if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const idx = cards.indexOf(card);
+                        setActive(idx);
+                    }
                 });
             });
 
-            // Keyboard navigation
-            carousel.setAttribute('tabindex', '0');
+            // Keyboard arrows on the carousel container
             carousel.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    prevSlide();
-                    resetAutoplay();
-                } else if (e.key === 'ArrowRight') {
-                    nextSlide();
-                    resetAutoplay();
-                }
+                if (e.key === 'ArrowLeft')  { e.preventDefault(); go(-1); }
+                if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
             });
 
             // Touch swipe
             let touchStartX = 0;
+            let touchStartY = 0;
             carousel.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
             }, { passive: true });
-
             carousel.addEventListener('touchend', (e) => {
-                const diff = e.changedTouches[0].screenX - touchStartX;
-                if (diff > 50) prevSlide();
-                if (diff < -50) nextSlide();
-                resetAutoplay();
+                const dx = e.changedTouches[0].screenX - touchStartX;
+                const dy = e.changedTouches[0].screenY - touchStartY;
+                if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+                    go(dx > 0 ? -1 : 1);
+                }
             }, { passive: true });
 
             // Pause on hover
-            carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-            carousel.addEventListener('mouseleave', startAutoplay);
+            carousel.addEventListener('mouseenter', stop);
+            carousel.addEventListener('mouseleave', start);
+            carousel.addEventListener('focusin', stop);
+            carousel.addEventListener('focusout', start);
 
-            // Card click advances carousel
-            cards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    currentIndex = index;
-                    updateCarousel();
-                    resetAutoplay();
-                });
-            });
-
-            // Start autoplay
-            startAutoplay();
+            // Initialize
+            render();
+            start();
         }
 
-        // Initialize both overlapping carousels
-        initOverlappingCarousel('gesCarousel');
-        initOverlappingCarousel('sucsuCarousel');
+        /* ============================================
+           Initialize all three carousels
+           ============================================ */
+        initPremiumCarousel('veloxisCarousel', { autoplay: true, interval: 5500 });
+        initPremiumCarousel('sucsuCarousel',   { autoplay: true, interval: 5000 });
+        initPremiumCarousel('gesCarousel',     { autoplay: true, interval: 5000 });
+
+        /* ============================================
+           SCROLL REVEAL (IntersectionObserver)
+           ============================================ */
+        (function initScrollReveal() {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            // Mark reveal targets
+            const targets = [];
+            document.querySelectorAll('section').forEach((s, i) => {
+                s.classList.add('reveal');
+                s.style.setProperty('--i', Math.min(i, 6));
+                targets.push(s);
+            });
+            document.querySelectorAll('.project, .leadership-card, .skill-group, .header-stats, .eyebrow, .scroll-cue').forEach((el, i) => {
+                el.classList.add('reveal');
+                el.style.setProperty('--i', (i % 6));
+                targets.push(el);
+            });
+
+            if (!('IntersectionObserver' in window)) {
+                targets.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+            targets.forEach(el => io.observe(el));
+        })();
+
+        /* ============================================
+           Subtle parallax on hero photo (mouse move)
+           ============================================ */
+        (function initHeroParallax() {
+            const header = document.querySelector('.header-container');
+            const image  = document.querySelector('.header-image img');
+            if (!header || !image) return;
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) return;
+
+            header.addEventListener('mousemove', (e) => {
+                const r = header.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width  - 0.5;
+                const y = (e.clientY - r.top)  / r.height - 0.5;
+                image.style.transform = `translate(${x * 8}px, ${y * 8}px) scale(1.02)`;
+            });
+            header.addEventListener('mouseleave', () => {
+                image.style.transform = '';
+            });
+        })();
     </script>
 </body>
 </html>
